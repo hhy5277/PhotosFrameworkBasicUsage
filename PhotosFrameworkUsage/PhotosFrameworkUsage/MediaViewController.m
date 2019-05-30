@@ -13,6 +13,8 @@
 #import "ZLVideoModel.h"
 #import "AlbumViewController.h"
 #import "ContactsViewController.h"
+#import "OtherLoginViewController.h"
+#import "PlayerLayerViewController.h"
 
 #define kVideoMaximumDuration 5
 
@@ -28,6 +30,8 @@
 #define kSelectVideoOfPhotoLibrary @"从相册库选择视频"
 #define kPhotosFrameworkUsage @"Photos框架的基本使用"
 #define kContactsFrameworkUsage @"使用Contacts框架处理通讯录联系人信息"
+#define kToOtherLoginVc @"第三方登陆"
+#define kAVPlayerLayerUsage @"AVPlayerView的使用"
 
 @interface MediaViewController () <UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -36,40 +40,6 @@
 @end
 
 @implementation MediaViewController
-
-- (NSArray *)listArray {
-    if (!_listArray) {
-        _listArray = @[kContactsFrameworkUsage,kRecordVideoUseImagePickerController,kPlayVideoWithAVPlayerViewController,kVideoSaveToAlbum,kGetMediaInfoWithAVAsset,kConvertWithAVAssetExportSession,kCompressWithAVAssetExportSession,kVideoFrameWithAVAssetImageGenerator,kUploadVideoToServer,kSelectVideoOfPhotoLibrary,kPhotosFrameworkUsage];
-    }
-    
-    return _listArray;
-}
-
-- (NSMutableArray *)videoList {
-    if (_videoList == nil) {
-        _videoList = [NSMutableArray arrayWithCapacity:1];
-    }
-    return _videoList;
-}
-
-
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.listArray count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellId = @"mediaCellId";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellId];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    }
-    
-    cell.textLabel.text = self.listArray[indexPath.row];
-    
-    return cell;
-}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -96,7 +66,23 @@
         [self photosFrameworkUsage];
     } else if ([text isEqualToString:kContactsFrameworkUsage]) {
         [self contactsFrameworkUsage];
+    } else if ([text isEqualToString:kToOtherLoginVc]) {
+        [self toOtherLogin];
+    } else if ([text isEqualToString:kAVPlayerLayerUsage]) {
+        [self avplayerLayerUsage];
     }
+}
+
+#pragma mark - AVPlayerView的使用
+- (void)avplayerLayerUsage {
+    PlayerLayerViewController *plVc = [[PlayerLayerViewController alloc] init];
+    [self.navigationController pushViewController:plVc animated:YES];
+}
+
+#pragma mark - 第三方登陆
+- (void)toOtherLogin {
+    OtherLoginViewController *otherLoginVc = [[OtherLoginViewController alloc] init];
+    [self.navigationController pushViewController:otherLoginVc animated:YES];
 }
 
 #pragma mark - Contacts.framework处理通讯录联系人信息
@@ -390,6 +376,38 @@
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     NSLog(@"Record Stop.");
     [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (NSArray *)listArray {
+    if (!_listArray) {
+        _listArray = @[kContactsFrameworkUsage,kRecordVideoUseImagePickerController,kPlayVideoWithAVPlayerViewController,kVideoSaveToAlbum,kGetMediaInfoWithAVAsset,kConvertWithAVAssetExportSession,kCompressWithAVAssetExportSession,kVideoFrameWithAVAssetImageGenerator,kUploadVideoToServer,kSelectVideoOfPhotoLibrary,kPhotosFrameworkUsage,kToOtherLoginVc,kAVPlayerLayerUsage];
+    }
+    
+    return _listArray;
+}
+
+- (NSMutableArray *)videoList {
+    if (_videoList == nil) {
+        _videoList = [NSMutableArray arrayWithCapacity:1];
+    }
+    return _videoList;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.listArray count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *cellId = @"mediaCellId";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellId];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+    
+    cell.textLabel.text = self.listArray[indexPath.row];
+    
+    return cell;
 }
 
 @end

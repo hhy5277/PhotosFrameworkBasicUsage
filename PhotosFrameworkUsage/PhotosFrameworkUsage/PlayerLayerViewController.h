@@ -1,5 +1,5 @@
 //
-//  ContactsInfoViewController.h
+//  PlayerLayerViewController.h
 //  PhotosFrameworkUsage
 //
 //  Created by 瓜豆2018 on 2019/5/30.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ContactsInfoViewController : UIViewController
+@interface PlayerLayerViewController : UIViewController
 
 @end
 

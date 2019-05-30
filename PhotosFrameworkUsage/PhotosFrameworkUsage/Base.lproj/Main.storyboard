@@ -18,20 +18,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PCb-aF-rXw">
-                                <rect key="frame" x="137" y="109" width="71" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="OK"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PCb-aF-rXw">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <state key="normal" title="ClickMeToContentViewController"/>
+                                <connections>
+                                    <action selector="toContentOnClick" destination="BYZ-38-t0r" eventType="touchUpInside" id="P0a-4T-HZB"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PCb-aF-rXw" secondAttribute="bottom" id="0bt-2f-q8Q"/>
+                            <constraint firstItem="PCb-aF-rXw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1fi-ow-T7g"/>
+                            <constraint firstItem="PCb-aF-rXw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="C4a-6f-gbk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PCb-aF-rXw" secondAttribute="trailing" id="snd-lg-CEN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="ToMedia" id="TWg-Zv-n7H"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="761" y="134"/>
+            <point key="canvasLocation" x="760.79999999999995" y="133.5832083958021"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GNh-E1-s4V">

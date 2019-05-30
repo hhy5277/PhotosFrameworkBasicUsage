@@ -38,8 +38,10 @@
 		A2C83464229FB4D6005DB6DF /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C83462229FB4D6005DB6DF /* FBSDKCoreKit.framework */; };
 		A2C83465229FB4D6005DB6DF /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C83463229FB4D6005DB6DF /* FBSDKLoginKit.framework */; };
 		A2C83467229FBB6A005DB6DF /* AccountKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C83466229FBB6A005DB6DF /* AccountKit.framework */; };
-		A2C8346B229FC54A005DB6DF /* ContactsInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C83469229FC54A005DB6DF /* ContactsInfoViewController.m */; };
-		A2C8346C229FC54A005DB6DF /* ContactsInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C8346A229FC54A005DB6DF /* ContactsInfoViewController.xib */; };
+		A2C83470229FCF21005DB6DF /* OtherLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C8346E229FCF21005DB6DF /* OtherLoginViewController.m */; };
+		A2C83471229FCF21005DB6DF /* OtherLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C8346F229FCF21005DB6DF /* OtherLoginViewController.xib */; };
+		A2C8347A229FD227005DB6DF /* PlayerLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C83478229FD227005DB6DF /* PlayerLayerViewController.m */; };
+		A2C8347B229FD227005DB6DF /* PlayerLayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C83479229FD227005DB6DF /* PlayerLayerViewController.xib */; };
 		B11E3DC7CDE6D625AFA6A0F1 /* libPods-PhotosFrameworkUsage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F45DA5A71F4E24256E35FD9 /* libPods-PhotosFrameworkUsage.a */; };
 /* End PBXBuildFile section */
 
@@ -97,9 +99,12 @@
 		A2C83462229FB4D6005DB6DF /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		A2C83463229FB4D6005DB6DF /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		A2C83466229FBB6A005DB6DF /* AccountKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AccountKit.framework; sourceTree = "<group>"; };
-		A2C83468229FC54A005DB6DF /* ContactsInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactsInfoViewController.h; sourceTree = "<group>"; };
-		A2C83469229FC54A005DB6DF /* ContactsInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactsInfoViewController.m; sourceTree = "<group>"; };
-		A2C8346A229FC54A005DB6DF /* ContactsInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactsInfoViewController.xib; sourceTree = "<group>"; };
+		A2C8346D229FCF21005DB6DF /* OtherLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OtherLoginViewController.h; sourceTree = "<group>"; };
+		A2C8346E229FCF21005DB6DF /* OtherLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OtherLoginViewController.m; sourceTree = "<group>"; };
+		A2C8346F229FCF21005DB6DF /* OtherLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherLoginViewController.xib; sourceTree = "<group>"; };
+		A2C83477229FD227005DB6DF /* PlayerLayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerLayerViewController.h; sourceTree = "<group>"; };
+		A2C83478229FD227005DB6DF /* PlayerLayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerLayerViewController.m; sourceTree = "<group>"; };
+		A2C83479229FD227005DB6DF /* PlayerLayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerLayerViewController.xib; sourceTree = "<group>"; };
 		BBCA052C9F19569B3FB183A2 /* Pods-PhotosFrameworkUsage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosFrameworkUsage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PhotosFrameworkUsage/Pods-PhotosFrameworkUsage.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -192,9 +197,12 @@
 				A24A8DF2229F72F2005306E9 /* ContactsViewController.h */,
 				A24A8DF3229F72F2005306E9 /* ContactsViewController.m */,
 				A24A8DF4229F72F2005306E9 /* ContactsViewController.xib */,
-				A2C83468229FC54A005DB6DF /* ContactsInfoViewController.h */,
-				A2C83469229FC54A005DB6DF /* ContactsInfoViewController.m */,
-				A2C8346A229FC54A005DB6DF /* ContactsInfoViewController.xib */,
+				A2C8346D229FCF21005DB6DF /* OtherLoginViewController.h */,
+				A2C8346E229FCF21005DB6DF /* OtherLoginViewController.m */,
+				A2C8346F229FCF21005DB6DF /* OtherLoginViewController.xib */,
+				A2C83477229FD227005DB6DF /* PlayerLayerViewController.h */,
+				A2C83478229FD227005DB6DF /* PlayerLayerViewController.m */,
+				A2C83479229FD227005DB6DF /* PlayerLayerViewController.xib */,
 			);
 			path = PhotosFrameworkUsage;
 			sourceTree = "<group>";
@@ -296,8 +304,9 @@
 				A279F72F229CCB9D003FAC27 /* Assets.xcassets in Resources */,
 				A279F72D229CCB9B003FAC27 /* Main.storyboard in Resources */,
 				A279F762229CCC26003FAC27 /* PhotosViewController.xib in Resources */,
+				A2C83471229FCF21005DB6DF /* OtherLoginViewController.xib in Resources */,
 				A279F75F229CCC26003FAC27 /* MediaViewController.xib in Resources */,
-				A2C8346C229FC54A005DB6DF /* ContactsInfoViewController.xib in Resources */,
+				A2C8347B229FD227005DB6DF /* PlayerLayerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,9 +357,10 @@
 				A279F751229CCC0C003FAC27 /* LZImageBrowserViewController.m in Sources */,
 				A279F727229CCB9B003FAC27 /* AppDelegate.m in Sources */,
 				A279F770229CD05A003FAC27 /* PhotoBrowserViewController.m in Sources */,
+				A2C8347A229FD227005DB6DF /* PlayerLayerViewController.m in Sources */,
 				A279F760229CCC26003FAC27 /* AlbumViewController.m in Sources */,
+				A2C83470229FCF21005DB6DF /* OtherLoginViewController.m in Sources */,
 				A279F766229CCC26003FAC27 /* PhotosViewController.m in Sources */,
-				A2C8346B229FC54A005DB6DF /* ContactsInfoViewController.m in Sources */,
 				A279F74C229CCC0C003FAC27 /* LZImageBrowserMainView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

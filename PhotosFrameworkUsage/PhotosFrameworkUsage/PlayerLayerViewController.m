@@ -1,22 +1,23 @@
 //
-//  ContactsInfoViewController.m
+//  PlayerLayerViewController.m
 //  PhotosFrameworkUsage
 //
 //  Created by 瓜豆2018 on 2019/5/30.
 //  Copyright © 2019年 hongyegroup. All rights reserved.
 //
 
-#import "ContactsInfoViewController.h"
+#import "PlayerLayerViewController.h"
 
-@interface ContactsInfoViewController ()
+@interface PlayerLayerViewController ()
 
 @end
 
-@implementation ContactsInfoViewController
+@implementation PlayerLayerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
 }
+
 
 @end
