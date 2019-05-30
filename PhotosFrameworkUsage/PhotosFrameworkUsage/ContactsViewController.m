@@ -10,15 +10,40 @@
 #import <Contacts/Contacts.h>
 #import <ContactsUI/ContactsUI.h>
 
-@interface ContactsViewController () <CNContactPickerDelegate>
+@interface ContactsViewController () <CNContactPickerDelegate, UITableViewDelegate, UITableViewDataSource>
 - (IBAction)contactsOnClick;
 - (IBAction)contactsTwoOnClick;
 - (IBAction)editContactInfoOnClick;
 - (IBAction)getContactInfoOnClick;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) CNContact *contact;
+@property (nonatomic, strong) NSArray<CNContact *> *contactsInfoArr;
 @end
 
 @implementation ContactsViewController
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.contactsInfoArr count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"contactCellId"];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"contactCellId"];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+    
+    CNContact *c = self.contactsInfoArr[indexPath.row];
+    cell.textLabel.text = [c.familyName stringByAppendingString:c.givenName];
+    cell.detailTextLabel.text = [c.phoneNumbers firstObject].value.stringValue;
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    CNContactViewController *contactVc = [CNContactViewController viewControllerForContact:[self.contactsInfoArr objectAtIndex:indexPath.row]];
+    [self.navigationController pushViewController:contactVc animated:YES];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -89,6 +114,9 @@
     [store enumerateContactsWithFetchRequest:request error:&error usingBlock:^(CNContact * _Nonnull contact, BOOL * _Nonnull stop) {
         NSLog(@"%@", contact);
     }];
+    
+    self.contactsInfoArr = contacts;
+    [self.tableView reloadData];
 }
 
 - (IBAction)contactsOnClick {

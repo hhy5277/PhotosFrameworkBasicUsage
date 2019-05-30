@@ -14,23 +14,27 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - IQKeyboardManager (6.2.1)
   - SDWebImage (5.0.0):
     - SDWebImage/Core (= 5.0.0)
   - SDWebImage/Core (5.0.0)
 
 DEPENDENCIES:
   - AFNetworking
+  - IQKeyboardManager
   - SDWebImage
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - IQKeyboardManager
     - SDWebImage
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  IQKeyboardManager: 964638372b4a61892cc74fdfa6fd26de8c9464a2
   SDWebImage: 5de80a0302de9e377e62f47d2fa1304efff0e55f
 
-PODFILE CHECKSUM: a0143ffcbbda73ffce50a70cce6307c7fc09b68f
+PODFILE CHECKSUM: 8e892cdcc55e0560fbfed6ccd67af23c501b621f
 
 COCOAPODS: 1.5.3

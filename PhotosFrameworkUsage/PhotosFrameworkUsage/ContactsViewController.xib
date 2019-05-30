@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactsViewController">
             <connections>
+                <outlet property="tableView" destination="pxQ-sS-VAG" id="CfZ-n0-17w"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,40 +21,61 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qx0-LP-CdV">
-                    <rect key="frame" x="51" y="88" width="219" height="28"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qx0-LP-CdV">
+                    <rect key="frame" x="0.0" y="20" width="320" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="zEp-Sh-g0B"/>
+                    </constraints>
                     <state key="normal" title="CNContactPickerViewController"/>
                     <connections>
                         <action selector="contactsOnClick" destination="-1" eventType="touchUpInside" id="HSc-Lb-9XF"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oe9-bc-D1H">
-                    <rect key="frame" x="72" y="135" width="177" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oe9-bc-D1H">
+                    <rect key="frame" x="0.0" y="65" width="320" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="SS0-Dk-TzZ"/>
+                    </constraints>
                     <state key="normal" title="CNContactViewController"/>
                     <connections>
                         <action selector="contactsTwoOnClick" destination="-1" eventType="touchUpInside" id="SOF-eq-q6v"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GWH-Hx-9Xz">
-                    <rect key="frame" x="109" y="228" width="105" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GWH-Hx-9Xz">
+                    <rect key="frame" x="0.0" y="110" width="320" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="4h7-BE-5xy"/>
+                    </constraints>
                     <state key="normal" title="GetContactInfo"/>
                     <connections>
                         <action selector="getContactInfoOnClick" destination="-1" eventType="touchUpInside" id="0pn-yz-aLt"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRc-Y5-p1D">
-                    <rect key="frame" x="107" y="182" width="107" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="EditContactInfo"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pxQ-sS-VAG">
+                    <rect key="frame" x="0.0" y="155" width="320" height="325"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
-                        <action selector="editContactInfoOnClick" destination="-1" eventType="touchUpInside" id="w2M-iV-L1X"/>
+                        <outlet property="dataSource" destination="-1" id="kdO-zW-DXH"/>
+                        <outlet property="delegate" destination="-1" id="g10-0j-6w4"/>
                     </connections>
-                </button>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="GWH-Hx-9Xz" firstAttribute="top" secondItem="oe9-bc-D1H" secondAttribute="bottom" id="0bc-kd-6jv"/>
+                <constraint firstItem="oe9-bc-D1H" firstAttribute="top" secondItem="qx0-LP-CdV" secondAttribute="bottom" id="CIE-KP-Gjb"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="qx0-LP-CdV" secondAttribute="trailing" id="IRw-qa-Myz"/>
+                <constraint firstItem="oe9-bc-D1H" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="Llw-2q-iUB"/>
+                <constraint firstItem="qx0-LP-CdV" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="OUX-1b-CG5"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="oe9-bc-D1H" secondAttribute="trailing" id="PXK-GB-jKa"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="pxQ-sS-VAG" secondAttribute="trailing" id="YcC-2d-Ctl"/>
+                <constraint firstItem="pxQ-sS-VAG" firstAttribute="top" secondItem="GWH-Hx-9Xz" secondAttribute="bottom" id="arW-3c-xQV"/>
+                <constraint firstItem="pxQ-sS-VAG" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="ayn-kt-sK0"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="pxQ-sS-VAG" secondAttribute="bottom" id="gSM-BY-ok7"/>
+                <constraint firstItem="qx0-LP-CdV" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="lt2-c5-SbI"/>
+                <constraint firstItem="GWH-Hx-9Xz" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="r6S-aT-j5n"/>
+                <constraint firstItem="GWH-Hx-9Xz" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="tya-K3-669"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="-658.125" y="140"/>
         </view>

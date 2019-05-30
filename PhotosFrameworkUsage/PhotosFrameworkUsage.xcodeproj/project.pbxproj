@@ -42,6 +42,12 @@
 		A2C83471229FCF21005DB6DF /* OtherLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C8346F229FCF21005DB6DF /* OtherLoginViewController.xib */; };
 		A2C8347A229FD227005DB6DF /* PlayerLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C83478229FD227005DB6DF /* PlayerLayerViewController.m */; };
 		A2C8347B229FD227005DB6DF /* PlayerLayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C83479229FD227005DB6DF /* PlayerLayerViewController.xib */; };
+		A2C8347F229FDED1005DB6DF /* QrCodeReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C8347D229FDED1005DB6DF /* QrCodeReaderViewController.m */; };
+		A2C83480229FDED1005DB6DF /* QrCodeReaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C8347E229FDED1005DB6DF /* QrCodeReaderViewController.xib */; };
+		A2C83484229FDFAF005DB6DF /* QrCodeGeneratorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C83482229FDFAF005DB6DF /* QrCodeGeneratorViewController.m */; };
+		A2C83485229FDFAF005DB6DF /* QrCodeGeneratorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C83483229FDFAF005DB6DF /* QrCodeGeneratorViewController.xib */; };
+		A2C83489229FDFCB005DB6DF /* SystemShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C83487229FDFCA005DB6DF /* SystemShareViewController.m */; };
+		A2C8348A229FDFCB005DB6DF /* SystemShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C83488229FDFCB005DB6DF /* SystemShareViewController.xib */; };
 		B11E3DC7CDE6D625AFA6A0F1 /* libPods-PhotosFrameworkUsage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F45DA5A71F4E24256E35FD9 /* libPods-PhotosFrameworkUsage.a */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +111,15 @@
 		A2C83477229FD227005DB6DF /* PlayerLayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerLayerViewController.h; sourceTree = "<group>"; };
 		A2C83478229FD227005DB6DF /* PlayerLayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerLayerViewController.m; sourceTree = "<group>"; };
 		A2C83479229FD227005DB6DF /* PlayerLayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerLayerViewController.xib; sourceTree = "<group>"; };
+		A2C8347C229FDED1005DB6DF /* QrCodeReaderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QrCodeReaderViewController.h; sourceTree = "<group>"; };
+		A2C8347D229FDED1005DB6DF /* QrCodeReaderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QrCodeReaderViewController.m; sourceTree = "<group>"; };
+		A2C8347E229FDED1005DB6DF /* QrCodeReaderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QrCodeReaderViewController.xib; sourceTree = "<group>"; };
+		A2C83481229FDFAF005DB6DF /* QrCodeGeneratorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QrCodeGeneratorViewController.h; sourceTree = "<group>"; };
+		A2C83482229FDFAF005DB6DF /* QrCodeGeneratorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QrCodeGeneratorViewController.m; sourceTree = "<group>"; };
+		A2C83483229FDFAF005DB6DF /* QrCodeGeneratorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QrCodeGeneratorViewController.xib; sourceTree = "<group>"; };
+		A2C83486229FDFCA005DB6DF /* SystemShareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemShareViewController.h; sourceTree = "<group>"; };
+		A2C83487229FDFCA005DB6DF /* SystemShareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemShareViewController.m; sourceTree = "<group>"; };
+		A2C83488229FDFCB005DB6DF /* SystemShareViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SystemShareViewController.xib; sourceTree = "<group>"; };
 		BBCA052C9F19569B3FB183A2 /* Pods-PhotosFrameworkUsage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosFrameworkUsage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PhotosFrameworkUsage/Pods-PhotosFrameworkUsage.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -203,6 +218,15 @@
 				A2C83477229FD227005DB6DF /* PlayerLayerViewController.h */,
 				A2C83478229FD227005DB6DF /* PlayerLayerViewController.m */,
 				A2C83479229FD227005DB6DF /* PlayerLayerViewController.xib */,
+				A2C8347C229FDED1005DB6DF /* QrCodeReaderViewController.h */,
+				A2C8347D229FDED1005DB6DF /* QrCodeReaderViewController.m */,
+				A2C8347E229FDED1005DB6DF /* QrCodeReaderViewController.xib */,
+				A2C83481229FDFAF005DB6DF /* QrCodeGeneratorViewController.h */,
+				A2C83482229FDFAF005DB6DF /* QrCodeGeneratorViewController.m */,
+				A2C83483229FDFAF005DB6DF /* QrCodeGeneratorViewController.xib */,
+				A2C83486229FDFCA005DB6DF /* SystemShareViewController.h */,
+				A2C83487229FDFCA005DB6DF /* SystemShareViewController.m */,
+				A2C83488229FDFCB005DB6DF /* SystemShareViewController.xib */,
 			);
 			path = PhotosFrameworkUsage;
 			sourceTree = "<group>";
@@ -250,6 +274,7 @@
 				A279F71E229CCB9B003FAC27 /* Sources */,
 				A279F71F229CCB9B003FAC27 /* Frameworks */,
 				A279F720229CCB9B003FAC27 /* Resources */,
+				7CF607BD630662F90C937444 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -299,11 +324,14 @@
 			files = (
 				A279F771229CD05A003FAC27 /* PhotoBrowserViewController.xib in Resources */,
 				A24A8DF6229F72F2005306E9 /* ContactsViewController.xib in Resources */,
+				A2C83485229FDFAF005DB6DF /* QrCodeGeneratorViewController.xib in Resources */,
 				A279F764229CCC26003FAC27 /* AlbumViewController.xib in Resources */,
 				A279F732229CCB9D003FAC27 /* LaunchScreen.storyboard in Resources */,
 				A279F72F229CCB9D003FAC27 /* Assets.xcassets in Resources */,
 				A279F72D229CCB9B003FAC27 /* Main.storyboard in Resources */,
 				A279F762229CCC26003FAC27 /* PhotosViewController.xib in Resources */,
+				A2C83480229FDED1005DB6DF /* QrCodeReaderViewController.xib in Resources */,
+				A2C8348A229FDFCB005DB6DF /* SystemShareViewController.xib in Resources */,
 				A2C83471229FCF21005DB6DF /* OtherLoginViewController.xib in Resources */,
 				A279F75F229CCC26003FAC27 /* MediaViewController.xib in Resources */,
 				A2C8347B229FD227005DB6DF /* PlayerLayerViewController.xib in Resources */,
@@ -335,6 +363,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		7CF607BD630662F90C937444 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PhotosFrameworkUsage/Pods-PhotosFrameworkUsage-resources.sh",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PhotosFrameworkUsage/Pods-PhotosFrameworkUsage-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -346,6 +396,8 @@
 				A279F74B229CCC0C003FAC27 /* LZImageBrowserForceTouchViewController.m in Sources */,
 				A279F74D229CCC0C003FAC27 /* LZImageBrowserManger.m in Sources */,
 				A279F763229CCC26003FAC27 /* ZLVideoModel.m in Sources */,
+				A2C83489229FDFCB005DB6DF /* SystemShareViewController.m in Sources */,
+				A2C83484229FDFAF005DB6DF /* QrCodeGeneratorViewController.m in Sources */,
 				A279F74F229CCC0C003FAC27 /* LZImageBrowserSubView.m in Sources */,
 				A279F735229CCB9D003FAC27 /* main.m in Sources */,
 				A279F76B229CCC36003FAC27 /* FileUploadTool.m in Sources */,
@@ -359,6 +411,7 @@
 				A279F770229CD05A003FAC27 /* PhotoBrowserViewController.m in Sources */,
 				A2C8347A229FD227005DB6DF /* PlayerLayerViewController.m in Sources */,
 				A279F760229CCC26003FAC27 /* AlbumViewController.m in Sources */,
+				A2C8347F229FDED1005DB6DF /* QrCodeReaderViewController.m in Sources */,
 				A2C83470229FCF21005DB6DF /* OtherLoginViewController.m in Sources */,
 				A279F766229CCC26003FAC27 /* PhotosViewController.m in Sources */,
 				A279F74C229CCC0C003FAC27 /* LZImageBrowserMainView.m in Sources */,

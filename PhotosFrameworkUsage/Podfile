@@ -9,5 +9,6 @@ target 'PhotosFrameworkUsage' do
 
 pod 'SDWebImage'
 pod 'AFNetworking'
+pod 'IQKeyboardManager'
 
 end

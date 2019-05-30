@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import "IQKeyboardManager.h"
 
 @interface AppDelegate ()
 
@@ -18,6 +19,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     NSLog(@"%@", launchOptions);
     [[FBSDKApplicationDelegate sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
+    
+    IQKeyboardManager *keyboardManager = [IQKeyboardManager sharedManager];
+    keyboardManager.keyboardDistanceFromTextField = 10;
+    keyboardManager.enable = YES;
+    keyboardManager.enableAutoToolbar = YES;
+    keyboardManager.shouldShowToolbarPlaceholder = YES;
+    keyboardManager.shouldResignOnTouchOutside = YES;
     
     return YES;
 }

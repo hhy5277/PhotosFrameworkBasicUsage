@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QrCodeGeneratorViewController">
+            <connections>
+                <outlet property="contentTxv" destination="Gvw-8S-ItK" id="S8p-Fb-5Jb"/>
+                <outlet property="qrcodeImv" destination="ydM-tX-gdN" id="ppp-J9-dN0"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ydM-tX-gdN">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
+                </imageView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="please here input." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Gvw-8S-ItK">
+                    <rect key="frame" x="0.0" y="250" width="320" height="130"/>
+                    <color key="backgroundColor" red="0.59197369622766338" green="1" blue="0.5577927341798441" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="130" id="5d6-sl-ZJW"/>
+                    </constraints>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2TL-SL-hjb">
+                    <rect key="frame" x="0.0" y="380" width="320" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="Rsv-ey-hfQ"/>
+                    </constraints>
+                    <state key="normal" title="Generator"/>
+                    <connections>
+                        <action selector="generatorOnClick" destination="-1" eventType="touchUpInside" id="pkR-Ho-Tn6"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ydM-tX-gdN" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="7aj-Ph-8ZV"/>
+                <constraint firstItem="Gvw-8S-ItK" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="Ie5-m0-GZ2"/>
+                <constraint firstItem="ydM-tX-gdN" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="JIM-dv-KjN"/>
+                <constraint firstItem="ydM-tX-gdN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Vz2-y5-aTV"/>
+                <constraint firstItem="2TL-SL-hjb" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="XeB-M6-q2o"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="2TL-SL-hjb" secondAttribute="bottom" id="YmU-w0-t2i"/>
+                <constraint firstItem="2TL-SL-hjb" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="i1O-ZM-B6S"/>
+                <constraint firstItem="Gvw-8S-ItK" firstAttribute="top" secondItem="ydM-tX-gdN" secondAttribute="bottom" id="nVK-yt-Woa"/>
+                <constraint firstItem="Gvw-8S-ItK" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="rf6-1T-HVq"/>
+                <constraint firstItem="2TL-SL-hjb" firstAttribute="top" secondItem="Gvw-8S-ItK" secondAttribute="bottom" id="teP-pT-xap"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="129.375" y="135"/>
+        </view>
+    </objects>
+</document>

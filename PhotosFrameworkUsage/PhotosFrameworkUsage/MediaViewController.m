@@ -15,8 +15,11 @@
 #import "ContactsViewController.h"
 #import "OtherLoginViewController.h"
 #import "PlayerLayerViewController.h"
+#import "SystemShareViewController.h"
+#import "QrCodeReaderViewController.h"
+#import "QrCodeGeneratorViewController.h"
 
-#define kVideoMaximumDuration 5
+#define kVideoMaximumDuration 30
 
 #define kRecordVideoUseImagePickerController @"使用UIImagePickerController录制视频"
 #define kPlayVideoWithAVPlayerViewController @"使用AVPlayerViewController播放视频"
@@ -32,6 +35,9 @@
 #define kContactsFrameworkUsage @"使用Contacts框架处理通讯录联系人信息"
 #define kToOtherLoginVc @"第三方登陆"
 #define kAVPlayerLayerUsage @"AVPlayerView的使用"
+#define kSystemOriginSharedVc @"系统原生分享"
+#define kQrCodeReader @"二维码扫描"
+#define kQrCodeGenerator @"二维码生成"
 
 @interface MediaViewController () <UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -40,6 +46,13 @@
 @end
 
 @implementation MediaViewController
+
+- (NSArray *)listArray {
+    if (!_listArray) {
+        _listArray = @[kContactsFrameworkUsage,kRecordVideoUseImagePickerController,kPlayVideoWithAVPlayerViewController,kVideoSaveToAlbum,kGetMediaInfoWithAVAsset,kConvertWithAVAssetExportSession,kCompressWithAVAssetExportSession,kVideoFrameWithAVAssetImageGenerator,kUploadVideoToServer,kSelectVideoOfPhotoLibrary,kPhotosFrameworkUsage,kToOtherLoginVc,kAVPlayerLayerUsage,kSystemOriginSharedVc,kQrCodeReader,kQrCodeGenerator];
+    }
+    return _listArray;
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -70,7 +83,33 @@
         [self toOtherLogin];
     } else if ([text isEqualToString:kAVPlayerLayerUsage]) {
         [self avplayerLayerUsage];
+    } else if ([text isEqualToString:kSystemOriginSharedVc]) {
+        [self systemOriginShare];
+    } else if ([text isEqualToString:kQrCodeReader]) {
+        [self qrcodeReader];
+    } else if ([text isEqualToString:kQrCodeGenerator]) {
+        [self qrcodeGenerator];
     }
+}
+
+#pragma mark - 二维码生成
+- (void)qrcodeGenerator {
+    QrCodeGeneratorViewController *generatorVc = [[QrCodeGeneratorViewController alloc] init];
+    [self.navigationController pushViewController:generatorVc animated:YES];
+}
+
+#pragma mark - 二维码扫描
+- (void)qrcodeReader {
+    QrCodeReaderViewController *readerVc = [[QrCodeReaderViewController alloc] init];
+    readerVc.qrcodeValueBlock = ^(NSString * _Nonnull codeString) {
+        [[[UIAlertView alloc] initWithTitle:@"qrcode content" message:codeString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    };
+    [self.navigationController pushViewController:readerVc animated:YES];
+}
+
+#pragma mark - 系统原生分享
+- (void)systemOriginShare {
+    [SystemShareViewController shareShowInViewController:self];
 }
 
 #pragma mark - AVPlayerView的使用
@@ -117,6 +156,7 @@
     ZLVideoModel *model = [self.videoList firstObject];
     AVAsset *asset = [AVAsset assetWithURL:model.videoFileUrl];
     AVAssetExportSession *exportSession = [AVAssetExportSession exportSessionWithAsset:asset presetName:AVAssetExportPresetMediumQuality];
+//    AVAssetExportSession *exportSession = [AVAssetExportSession exportSessionWithAsset:asset presetName:AVAssetExportPresetLowQuality];
     exportSession.outputFileType = AVFileTypeMPEG4;
     exportSession.shouldOptimizeForNetworkUse = YES;
     NSString *filePath = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:@"movie.mp4"];
@@ -130,7 +170,7 @@
             
             NSString *boundary = [self generateBoundaryString];
             // 请求的Url
-            NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://192.168.0.122:8080/MyApplicationPrj/FileUpload"]];
+            NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://192.168.0.105:8080/MyApplicationPrj/FileUpload"]];
             [request setHTTPMethod:@"POST"];
             // 设置ContentType
             NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
@@ -271,10 +311,14 @@
     ZLVideoModel *model = [self.videoList firstObject];
     AVAsset *asset = [AVAsset assetWithURL:model.videoFileUrl];
     AVAssetExportSession *exportSession = [AVAssetExportSession exportSessionWithAsset:asset presetName:AVAssetExportPresetMediumQuality];
+//    AVAssetExportSession *exportSession = [AVAssetExportSession exportSessionWithAsset:asset presetName:AVAssetExportPresetLowQuality];
+    
     exportSession.outputFileType = AVFileTypeMPEG4;
     exportSession.shouldOptimizeForNetworkUse = YES;
     exportSession.outputURL = [NSURL fileURLWithPath:[dirPath stringByAppendingPathComponent:@"autoydyne.mp4"]];
     [exportSession exportAsynchronouslyWithCompletionHandler:^{
+        NSFileManager *fm = [NSFileManager defaultManager];
+        NSLog(@"%@ - %f", [fm attributesOfItemAtPath:exportSession.outputURL.path error:nil], CMTimeGetSeconds([AVAsset assetWithURL:exportSession.outputURL].duration));
         if (exportSession.status == AVAssetExportSessionStatusCompleted) {
             // 保存到相册
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -368,6 +412,10 @@
         model.videoFileUrl = url;
         model.mediaType = mediaType;
         [self.videoList addObject:model];
+        
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        NSDictionary *dict = [fileManager attributesOfItemAtPath:url.path error:nil];
+        NSLog(@"%@ - %f", dict, CMTimeGetSeconds([AVAsset assetWithURL:url].duration));
     }
     
     [picker dismissViewControllerAnimated:YES completion:nil];
@@ -376,14 +424,6 @@
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     NSLog(@"Record Stop.");
     [picker dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (NSArray *)listArray {
-    if (!_listArray) {
-        _listArray = @[kContactsFrameworkUsage,kRecordVideoUseImagePickerController,kPlayVideoWithAVPlayerViewController,kVideoSaveToAlbum,kGetMediaInfoWithAVAsset,kConvertWithAVAssetExportSession,kCompressWithAVAssetExportSession,kVideoFrameWithAVAssetImageGenerator,kUploadVideoToServer,kSelectVideoOfPhotoLibrary,kPhotosFrameworkUsage,kToOtherLoginVc,kAVPlayerLayerUsage];
-    }
-    
-    return _listArray;
 }
 
 - (NSMutableArray *)videoList {
