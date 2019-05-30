@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A24A8DF5229F72F2005306E9 /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A24A8DF3229F72F2005306E9 /* ContactsViewController.m */; };
+		A24A8DF6229F72F2005306E9 /* ContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A24A8DF4229F72F2005306E9 /* ContactsViewController.xib */; };
+		A24A8DF8229F7328005306E9 /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A24A8DF7229F7328005306E9 /* Contacts.framework */; };
+		A24A8DFA229F7377005306E9 /* ContactsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A24A8DF9229F7377005306E9 /* ContactsUI.framework */; };
 		A279F727229CCB9B003FAC27 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A279F726229CCB9B003FAC27 /* AppDelegate.m */; };
 		A279F72D229CCB9B003FAC27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A279F72B229CCB9B003FAC27 /* Main.storyboard */; };
 		A279F72F229CCB9D003FAC27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A279F72E229CCB9D003FAC27 /* Assets.xcassets */; };
@@ -31,12 +35,22 @@
 		A279F76C229CCC36003FAC27 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A279F76A229CCC36003FAC27 /* ViewController.m */; };
 		A279F770229CD05A003FAC27 /* PhotoBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A279F76E229CD05A003FAC27 /* PhotoBrowserViewController.m */; };
 		A279F771229CD05A003FAC27 /* PhotoBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A279F76F229CD05A003FAC27 /* PhotoBrowserViewController.xib */; };
+		A2C83464229FB4D6005DB6DF /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C83462229FB4D6005DB6DF /* FBSDKCoreKit.framework */; };
+		A2C83465229FB4D6005DB6DF /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C83463229FB4D6005DB6DF /* FBSDKLoginKit.framework */; };
+		A2C83467229FBB6A005DB6DF /* AccountKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C83466229FBB6A005DB6DF /* AccountKit.framework */; };
+		A2C8346B229FC54A005DB6DF /* ContactsInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C83469229FC54A005DB6DF /* ContactsInfoViewController.m */; };
+		A2C8346C229FC54A005DB6DF /* ContactsInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C8346A229FC54A005DB6DF /* ContactsInfoViewController.xib */; };
 		B11E3DC7CDE6D625AFA6A0F1 /* libPods-PhotosFrameworkUsage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F45DA5A71F4E24256E35FD9 /* libPods-PhotosFrameworkUsage.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7B3F4E2AE4392DAA3D2980A2 /* Pods-PhotosFrameworkUsage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosFrameworkUsage.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhotosFrameworkUsage/Pods-PhotosFrameworkUsage.release.xcconfig"; sourceTree = "<group>"; };
 		7F45DA5A71F4E24256E35FD9 /* libPods-PhotosFrameworkUsage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PhotosFrameworkUsage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A24A8DF2229F72F2005306E9 /* ContactsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
+		A24A8DF3229F72F2005306E9 /* ContactsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
+		A24A8DF4229F72F2005306E9 /* ContactsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactsViewController.xib; sourceTree = "<group>"; };
+		A24A8DF7229F7328005306E9 /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
+		A24A8DF9229F7377005306E9 /* ContactsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ContactsUI.framework; path = System/Library/Frameworks/ContactsUI.framework; sourceTree = SDKROOT; };
 		A279F722229CCB9B003FAC27 /* PhotosFrameworkUsage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotosFrameworkUsage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A279F725229CCB9B003FAC27 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A279F726229CCB9B003FAC27 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -80,6 +94,12 @@
 		A279F76D229CD05A003FAC27 /* PhotoBrowserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoBrowserViewController.h; sourceTree = "<group>"; };
 		A279F76E229CD05A003FAC27 /* PhotoBrowserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoBrowserViewController.m; sourceTree = "<group>"; };
 		A279F76F229CD05A003FAC27 /* PhotoBrowserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoBrowserViewController.xib; sourceTree = "<group>"; };
+		A2C83462229FB4D6005DB6DF /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		A2C83463229FB4D6005DB6DF /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		A2C83466229FBB6A005DB6DF /* AccountKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AccountKit.framework; sourceTree = "<group>"; };
+		A2C83468229FC54A005DB6DF /* ContactsInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactsInfoViewController.h; sourceTree = "<group>"; };
+		A2C83469229FC54A005DB6DF /* ContactsInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactsInfoViewController.m; sourceTree = "<group>"; };
+		A2C8346A229FC54A005DB6DF /* ContactsInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactsInfoViewController.xib; sourceTree = "<group>"; };
 		BBCA052C9F19569B3FB183A2 /* Pods-PhotosFrameworkUsage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosFrameworkUsage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PhotosFrameworkUsage/Pods-PhotosFrameworkUsage.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,6 +108,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A24A8DFA229F7377005306E9 /* ContactsUI.framework in Frameworks */,
+				A2C83464229FB4D6005DB6DF /* FBSDKCoreKit.framework in Frameworks */,
+				A2C83465229FB4D6005DB6DF /* FBSDKLoginKit.framework in Frameworks */,
+				A2C83467229FBB6A005DB6DF /* AccountKit.framework in Frameworks */,
+				A24A8DF8229F7328005306E9 /* Contacts.framework in Frameworks */,
 				B11E3DC7CDE6D625AFA6A0F1 /* libPods-PhotosFrameworkUsage.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -98,6 +123,8 @@
 		5E556BCC37BE0110E900E540 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A24A8DF9229F7377005306E9 /* ContactsUI.framework */,
+				A24A8DF7229F7328005306E9 /* Contacts.framework */,
 				7F45DA5A71F4E24256E35FD9 /* libPods-PhotosFrameworkUsage.a */,
 			);
 			name = Frameworks;
@@ -133,6 +160,7 @@
 		A279F724229CCB9B003FAC27 /* PhotosFrameworkUsage */ = {
 			isa = PBXGroup;
 			children = (
+				A2C83461229FB0DD005DB6DF /* Frameworks */,
 				A279F73B229CCC0C003FAC27 /* LZImageBrowser */,
 				A279F725229CCB9B003FAC27 /* AppDelegate.h */,
 				A279F726229CCB9B003FAC27 /* AppDelegate.m */,
@@ -161,6 +189,12 @@
 				A279F76D229CD05A003FAC27 /* PhotoBrowserViewController.h */,
 				A279F76E229CD05A003FAC27 /* PhotoBrowserViewController.m */,
 				A279F76F229CD05A003FAC27 /* PhotoBrowserViewController.xib */,
+				A24A8DF2229F72F2005306E9 /* ContactsViewController.h */,
+				A24A8DF3229F72F2005306E9 /* ContactsViewController.m */,
+				A24A8DF4229F72F2005306E9 /* ContactsViewController.xib */,
+				A2C83468229FC54A005DB6DF /* ContactsInfoViewController.h */,
+				A2C83469229FC54A005DB6DF /* ContactsInfoViewController.m */,
+				A2C8346A229FC54A005DB6DF /* ContactsInfoViewController.xib */,
 			);
 			path = PhotosFrameworkUsage;
 			sourceTree = "<group>";
@@ -185,6 +219,16 @@
 				A279F74A229CCC0C003FAC27 /* LZImageBrowserViewController.m */,
 			);
 			path = LZImageBrowser;
+			sourceTree = "<group>";
+		};
+		A2C83461229FB0DD005DB6DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A2C83466229FBB6A005DB6DF /* AccountKit.framework */,
+				A2C83462229FB4D6005DB6DF /* FBSDKCoreKit.framework */,
+				A2C83463229FB4D6005DB6DF /* FBSDKLoginKit.framework */,
+			);
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,12 +290,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A279F771229CD05A003FAC27 /* PhotoBrowserViewController.xib in Resources */,
+				A24A8DF6229F72F2005306E9 /* ContactsViewController.xib in Resources */,
 				A279F764229CCC26003FAC27 /* AlbumViewController.xib in Resources */,
 				A279F732229CCB9D003FAC27 /* LaunchScreen.storyboard in Resources */,
 				A279F72F229CCB9D003FAC27 /* Assets.xcassets in Resources */,
 				A279F72D229CCB9B003FAC27 /* Main.storyboard in Resources */,
 				A279F762229CCC26003FAC27 /* PhotosViewController.xib in Resources */,
 				A279F75F229CCC26003FAC27 /* MediaViewController.xib in Resources */,
+				A2C8346C229FC54A005DB6DF /* ContactsInfoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +340,7 @@
 				A279F74F229CCC0C003FAC27 /* LZImageBrowserSubView.m in Sources */,
 				A279F735229CCB9D003FAC27 /* main.m in Sources */,
 				A279F76B229CCC36003FAC27 /* FileUploadTool.m in Sources */,
+				A24A8DF5229F72F2005306E9 /* ContactsViewController.m in Sources */,
 				A279F765229CCC26003FAC27 /* PhotoCollectionViewCell.m in Sources */,
 				A279F750229CCC0C003FAC27 /* LZImageBrowserTranslation.m in Sources */,
 				A279F761229CCC26003FAC27 /* MediaViewController.m in Sources */,
@@ -303,6 +350,7 @@
 				A279F770229CD05A003FAC27 /* PhotoBrowserViewController.m in Sources */,
 				A279F760229CCC26003FAC27 /* AlbumViewController.m in Sources */,
 				A279F766229CCC26003FAC27 /* PhotosViewController.m in Sources */,
+				A2C8346B229FC54A005DB6DF /* ContactsInfoViewController.m in Sources */,
 				A279F74C229CCC0C003FAC27 /* LZImageBrowserMainView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,6 +496,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VZ78Z6H4RD;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PhotosFrameworkUsage/Frameworks",
+				);
 				INFOPLIST_FILE = PhotosFrameworkUsage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -466,6 +518,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VZ78Z6H4RD;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PhotosFrameworkUsage/Frameworks",
+				);
 				INFOPLIST_FILE = PhotosFrameworkUsage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

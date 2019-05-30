@@ -12,6 +12,7 @@
 #import <AVKit/AVKit.h>
 #import "ZLVideoModel.h"
 #import "AlbumViewController.h"
+#import "ContactsViewController.h"
 
 #define kVideoMaximumDuration 5
 
@@ -26,6 +27,7 @@
 #define kUploadVideoToServer @"上传视频到服务器"
 #define kSelectVideoOfPhotoLibrary @"从相册库选择视频"
 #define kPhotosFrameworkUsage @"Photos框架的基本使用"
+#define kContactsFrameworkUsage @"使用Contacts框架处理通讯录联系人信息"
 
 @interface MediaViewController () <UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -37,7 +39,7 @@
 
 - (NSArray *)listArray {
     if (!_listArray) {
-        _listArray = @[kRecordVideoUseImagePickerController,kPlayVideoWithAVPlayerViewController,kVideoSaveToAlbum,kGetMediaInfoWithAVAsset,kConvertWithAVAssetExportSession,kCompressWithAVAssetExportSession,kVideoFrameWithAVAssetImageGenerator,kUploadVideoToServer,kSelectVideoOfPhotoLibrary,kPhotosFrameworkUsage];
+        _listArray = @[kContactsFrameworkUsage,kRecordVideoUseImagePickerController,kPlayVideoWithAVPlayerViewController,kVideoSaveToAlbum,kGetMediaInfoWithAVAsset,kConvertWithAVAssetExportSession,kCompressWithAVAssetExportSession,kVideoFrameWithAVAssetImageGenerator,kUploadVideoToServer,kSelectVideoOfPhotoLibrary,kPhotosFrameworkUsage];
     }
     
     return _listArray;
@@ -92,7 +94,15 @@
         [self selectVideoOfPhotoLibrary];
     } else if ([text isEqualToString:kPhotosFrameworkUsage]) {
         [self photosFrameworkUsage];
+    } else if ([text isEqualToString:kContactsFrameworkUsage]) {
+        [self contactsFrameworkUsage];
     }
+}
+
+#pragma mark - Contacts.framework处理通讯录联系人信息
+- (void)contactsFrameworkUsage {
+    ContactsViewController *contactsVc = [[ContactsViewController alloc] init];
+    [self.navigationController pushViewController:contactsVc animated:YES];
 }
 
 #pragma mark - Photos框架的基本使用

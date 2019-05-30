@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<string>com.hongyegroup.PhotosFrameworkUsage</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -56,5 +56,30 @@
 	</dict>
 	<key>CFBundleDisplayName</key>
 	<string>DemoTwo</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Privacy - Contacts Usage Description</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb367820503866911</string>
+				<string>ak367820503866911</string>
+			</array>
+		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>367820503866911</string>
+	<key>FacebookDisplayName</key>
+	<string>PhotosFrameworkUsage</string>
+	<key>AccountKitClientToken</key>
+	<string>2158fd87d56ee78042ea9edd8a5177df</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-share-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+	</array>
 </dict>
 </plist>
