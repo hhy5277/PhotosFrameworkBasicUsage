@@ -41,8 +41,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    CNContactViewController *contactVc = [CNContactViewController viewControllerForContact:[self.contactsInfoArr objectAtIndex:indexPath.row]];
-    [self.navigationController pushViewController:contactVc animated:YES];
+    CNContact *c = self.contactsInfoArr[indexPath.row];
+    
 }
 
 - (void)viewDidLoad {
@@ -106,14 +106,14 @@
     // 提取数据
     NSError *error = nil;
     NSArray<CNContact *> *contacts = [store unifiedContactsMatchingPredicate:predicate keysToFetch:@[CNContactFamilyNameKey,CNContactGivenNameKey,CNContactOrganizationNameKey,CNContactPhoneNumbersKey,CNContactEmailAddressesKey,CNContactPostalAddressesKey] error:&error];
-    for (CNContact *c in contacts) {
-        NSLog(@"%@", c);
-    }
+//    for (CNContact *c in contacts) {
+//        NSLog(@"%@", c);
+//    }
     
-    CNContactFetchRequest *request = [[CNContactFetchRequest alloc] initWithKeysToFetch:@[CNContactGivenNameKey,CNContactPhoneNumbersKey]];
-    [store enumerateContactsWithFetchRequest:request error:&error usingBlock:^(CNContact * _Nonnull contact, BOOL * _Nonnull stop) {
-        NSLog(@"%@", contact);
-    }];
+//    CNContactFetchRequest *request = [[CNContactFetchRequest alloc] initWithKeysToFetch:@[CNContactGivenNameKey,CNContactPhoneNumbersKey]];
+//    [store enumerateContactsWithFetchRequest:request error:&error usingBlock:^(CNContact * _Nonnull contact, BOOL * _Nonnull stop) {
+//        NSLog(@"%@", contact);
+//    }];
     
     self.contactsInfoArr = contacts;
     [self.tableView reloadData];
@@ -127,7 +127,7 @@
 }
 
 - (IBAction)contactsTwoOnClick {
-    // 只有使用push方式，CNContactViewController才能正常显示，不能使用present方式打开
+    // 只有使用push方式，CNContactViewController才能正常显示，不能使用present方式打开，只有CNContactPickerViewController的CNContact才行
     CNContactViewController *contactVc = [CNContactViewController viewControllerForContact:self.contact];
     [self.navigationController pushViewController:contactVc animated:YES];
 }
