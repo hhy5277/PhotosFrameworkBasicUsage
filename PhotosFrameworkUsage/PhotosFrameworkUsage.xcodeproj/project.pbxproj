@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A238B0BB22A105FA001D143C /* AudioListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A238B0B922A105FA001D143C /* AudioListViewController.m */; };
+		A238B0BC22A105FA001D143C /* AudioListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A238B0BA22A105FA001D143C /* AudioListViewController.xib */; };
+		A238B0BE22A11FAE001D143C /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A238B0BD22A11FAE001D143C /* MessageUI.framework */; };
+		A238B0C222A127B6001D143C /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A238B0C022A127B6001D143C /* BaseViewController.m */; };
+		A238B0C322A127B6001D143C /* BaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A238B0C122A127B6001D143C /* BaseViewController.xib */; };
 		A24A8DF5229F72F2005306E9 /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A24A8DF3229F72F2005306E9 /* ContactsViewController.m */; };
 		A24A8DF6229F72F2005306E9 /* ContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A24A8DF4229F72F2005306E9 /* ContactsViewController.xib */; };
 		A24A8DF8229F7328005306E9 /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A24A8DF7229F7328005306E9 /* Contacts.framework */; };
@@ -48,12 +53,22 @@
 		A2C83485229FDFAF005DB6DF /* QrCodeGeneratorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C83483229FDFAF005DB6DF /* QrCodeGeneratorViewController.xib */; };
 		A2C83489229FDFCB005DB6DF /* SystemShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C83487229FDFCA005DB6DF /* SystemShareViewController.m */; };
 		A2C8348A229FDFCB005DB6DF /* SystemShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C83488229FDFCB005DB6DF /* SystemShareViewController.xib */; };
+		A2E5F0F222A0C24A00876A89 /* AudioRecorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E5F0F022A0C24A00876A89 /* AudioRecorderViewController.m */; };
+		A2E5F0F322A0C24A00876A89 /* AudioRecorderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2E5F0F122A0C24A00876A89 /* AudioRecorderViewController.xib */; };
+		A2E5F0F522A0C27000876A89 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E5F0F422A0C27000876A89 /* AVFoundation.framework */; };
 		B11E3DC7CDE6D625AFA6A0F1 /* libPods-PhotosFrameworkUsage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F45DA5A71F4E24256E35FD9 /* libPods-PhotosFrameworkUsage.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7B3F4E2AE4392DAA3D2980A2 /* Pods-PhotosFrameworkUsage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosFrameworkUsage.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhotosFrameworkUsage/Pods-PhotosFrameworkUsage.release.xcconfig"; sourceTree = "<group>"; };
 		7F45DA5A71F4E24256E35FD9 /* libPods-PhotosFrameworkUsage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PhotosFrameworkUsage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A238B0B822A105FA001D143C /* AudioListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioListViewController.h; sourceTree = "<group>"; };
+		A238B0B922A105FA001D143C /* AudioListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioListViewController.m; sourceTree = "<group>"; };
+		A238B0BA22A105FA001D143C /* AudioListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioListViewController.xib; sourceTree = "<group>"; };
+		A238B0BD22A11FAE001D143C /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		A238B0BF22A127B6001D143C /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		A238B0C022A127B6001D143C /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		A238B0C122A127B6001D143C /* BaseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseViewController.xib; sourceTree = "<group>"; };
 		A24A8DF2229F72F2005306E9 /* ContactsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
 		A24A8DF3229F72F2005306E9 /* ContactsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
 		A24A8DF4229F72F2005306E9 /* ContactsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactsViewController.xib; sourceTree = "<group>"; };
@@ -120,6 +135,11 @@
 		A2C83486229FDFCA005DB6DF /* SystemShareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemShareViewController.h; sourceTree = "<group>"; };
 		A2C83487229FDFCA005DB6DF /* SystemShareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemShareViewController.m; sourceTree = "<group>"; };
 		A2C83488229FDFCB005DB6DF /* SystemShareViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SystemShareViewController.xib; sourceTree = "<group>"; };
+		A2E5F0EF22A0C24A00876A89 /* AudioRecorderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioRecorderViewController.h; sourceTree = "<group>"; };
+		A2E5F0F022A0C24A00876A89 /* AudioRecorderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioRecorderViewController.m; sourceTree = "<group>"; };
+		A2E5F0F122A0C24A00876A89 /* AudioRecorderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioRecorderViewController.xib; sourceTree = "<group>"; };
+		A2E5F0F422A0C27000876A89 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A2E5F0F722A0CAAC00876A89 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		BBCA052C9F19569B3FB183A2 /* Pods-PhotosFrameworkUsage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosFrameworkUsage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PhotosFrameworkUsage/Pods-PhotosFrameworkUsage.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,6 +148,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A238B0BE22A11FAE001D143C /* MessageUI.framework in Frameworks */,
+				A2E5F0F522A0C27000876A89 /* AVFoundation.framework in Frameworks */,
 				A24A8DFA229F7377005306E9 /* ContactsUI.framework in Frameworks */,
 				A2C83464229FB4D6005DB6DF /* FBSDKCoreKit.framework in Frameworks */,
 				A2C83465229FB4D6005DB6DF /* FBSDKLoginKit.framework in Frameworks */,
@@ -143,6 +165,8 @@
 		5E556BCC37BE0110E900E540 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A238B0BD22A11FAE001D143C /* MessageUI.framework */,
+				A2E5F0F422A0C27000876A89 /* AVFoundation.framework */,
 				A24A8DF9229F7377005306E9 /* ContactsUI.framework */,
 				A24A8DF7229F7328005306E9 /* Contacts.framework */,
 				7F45DA5A71F4E24256E35FD9 /* libPods-PhotosFrameworkUsage.a */,
@@ -227,6 +251,16 @@
 				A2C83486229FDFCA005DB6DF /* SystemShareViewController.h */,
 				A2C83487229FDFCA005DB6DF /* SystemShareViewController.m */,
 				A2C83488229FDFCB005DB6DF /* SystemShareViewController.xib */,
+				A2E5F0EF22A0C24A00876A89 /* AudioRecorderViewController.h */,
+				A2E5F0F022A0C24A00876A89 /* AudioRecorderViewController.m */,
+				A2E5F0F122A0C24A00876A89 /* AudioRecorderViewController.xib */,
+				A2E5F0F722A0CAAC00876A89 /* PrefixHeader.pch */,
+				A238B0B822A105FA001D143C /* AudioListViewController.h */,
+				A238B0B922A105FA001D143C /* AudioListViewController.m */,
+				A238B0BA22A105FA001D143C /* AudioListViewController.xib */,
+				A238B0BF22A127B6001D143C /* BaseViewController.h */,
+				A238B0C022A127B6001D143C /* BaseViewController.m */,
+				A238B0C122A127B6001D143C /* BaseViewController.xib */,
 			);
 			path = PhotosFrameworkUsage;
 			sourceTree = "<group>";
@@ -322,10 +356,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2E5F0F322A0C24A00876A89 /* AudioRecorderViewController.xib in Resources */,
+				A238B0C322A127B6001D143C /* BaseViewController.xib in Resources */,
 				A279F771229CD05A003FAC27 /* PhotoBrowserViewController.xib in Resources */,
 				A24A8DF6229F72F2005306E9 /* ContactsViewController.xib in Resources */,
 				A2C83485229FDFAF005DB6DF /* QrCodeGeneratorViewController.xib in Resources */,
 				A279F764229CCC26003FAC27 /* AlbumViewController.xib in Resources */,
+				A238B0BC22A105FA001D143C /* AudioListViewController.xib in Resources */,
 				A279F732229CCB9D003FAC27 /* LaunchScreen.storyboard in Resources */,
 				A279F72F229CCB9D003FAC27 /* Assets.xcassets in Resources */,
 				A279F72D229CCB9B003FAC27 /* Main.storyboard in Resources */,
@@ -401,12 +438,15 @@
 				A279F74F229CCC0C003FAC27 /* LZImageBrowserSubView.m in Sources */,
 				A279F735229CCB9D003FAC27 /* main.m in Sources */,
 				A279F76B229CCC36003FAC27 /* FileUploadTool.m in Sources */,
+				A238B0C222A127B6001D143C /* BaseViewController.m in Sources */,
 				A24A8DF5229F72F2005306E9 /* ContactsViewController.m in Sources */,
 				A279F765229CCC26003FAC27 /* PhotoCollectionViewCell.m in Sources */,
 				A279F750229CCC0C003FAC27 /* LZImageBrowserTranslation.m in Sources */,
+				A2E5F0F222A0C24A00876A89 /* AudioRecorderViewController.m in Sources */,
 				A279F761229CCC26003FAC27 /* MediaViewController.m in Sources */,
 				A279F76C229CCC36003FAC27 /* ViewController.m in Sources */,
 				A279F751229CCC0C003FAC27 /* LZImageBrowserViewController.m in Sources */,
+				A238B0BB22A105FA001D143C /* AudioListViewController.m in Sources */,
 				A279F727229CCB9B003FAC27 /* AppDelegate.m in Sources */,
 				A279F770229CD05A003FAC27 /* PhotoBrowserViewController.m in Sources */,
 				A2C8347A229FD227005DB6DF /* PlayerLayerViewController.m in Sources */,
@@ -563,6 +603,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/PhotosFrameworkUsage/Frameworks",
 				);
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PhotosFrameworkUsage/PrefixHeader.pch";
 				INFOPLIST_FILE = PhotosFrameworkUsage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -585,6 +626,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/PhotosFrameworkUsage/Frameworks",
 				);
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PhotosFrameworkUsage/PrefixHeader.pch";
 				INFOPLIST_FILE = PhotosFrameworkUsage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

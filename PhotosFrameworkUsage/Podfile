@@ -10,5 +10,7 @@ target 'PhotosFrameworkUsage' do
 pod 'SDWebImage'
 pod 'AFNetworking'
 pod 'IQKeyboardManager'
+pod 'FMDB'
+pod 'MBProgressHUD'
 
 end

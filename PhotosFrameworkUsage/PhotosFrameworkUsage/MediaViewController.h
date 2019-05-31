@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MediaViewController : UIViewController
+@interface MediaViewController : BaseViewController
 
 @end
 

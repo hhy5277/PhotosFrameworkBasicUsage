@@ -70,7 +70,8 @@
     
     AVCaptureVideoPreviewLayer *layer = [AVCaptureVideoPreviewLayer layerWithSession:self.session];
     layer.videoGravity = AVLayerVideoGravityResizeAspectFill;
-    layer.frame = self.view.layer.bounds;
+//    layer.frame = self.view.layer.bounds;
+    layer.frame = [UIScreen mainScreen].bounds;
     [self.view.layer insertSublayer:layer atIndex:0];
     //开始捕获
     [self.session startRunning];

@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SystemShareViewController : UIViewController
 + (void)shareShowInViewController:(UIViewController *)viewController;
++ (void)sendEmailWithFilePath:(NSArray *)filePaths viewController:(UIViewController *)viewController;
 @end
 
 NS_ASSUME_NONNULL_END

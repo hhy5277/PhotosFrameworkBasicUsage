@@ -15,9 +15,9 @@
 #import "ContactsViewController.h"
 #import "OtherLoginViewController.h"
 #import "PlayerLayerViewController.h"
-#import "SystemShareViewController.h"
 #import "QrCodeReaderViewController.h"
 #import "QrCodeGeneratorViewController.h"
+#import "AudioRecorderViewController.h"
 
 #define kVideoMaximumDuration 30
 
@@ -38,6 +38,8 @@
 #define kSystemOriginSharedVc @"系统原生分享"
 #define kQrCodeReader @"二维码扫描"
 #define kQrCodeGenerator @"二维码生成"
+#define kAudioHandle @"音频录制、播放"
+#define kSendEmail @"发送邮件"
 
 @interface MediaViewController () <UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -49,7 +51,7 @@
 
 - (NSArray *)listArray {
     if (!_listArray) {
-        _listArray = @[kContactsFrameworkUsage,kRecordVideoUseImagePickerController,kPlayVideoWithAVPlayerViewController,kVideoSaveToAlbum,kGetMediaInfoWithAVAsset,kConvertWithAVAssetExportSession,kCompressWithAVAssetExportSession,kVideoFrameWithAVAssetImageGenerator,kUploadVideoToServer,kSelectVideoOfPhotoLibrary,kPhotosFrameworkUsage,kToOtherLoginVc,kAVPlayerLayerUsage,kSystemOriginSharedVc,kQrCodeReader,kQrCodeGenerator];
+        _listArray = @[kContactsFrameworkUsage,kRecordVideoUseImagePickerController,kPlayVideoWithAVPlayerViewController,kVideoSaveToAlbum,kGetMediaInfoWithAVAsset,kConvertWithAVAssetExportSession,kCompressWithAVAssetExportSession,kVideoFrameWithAVAssetImageGenerator,kUploadVideoToServer,kSelectVideoOfPhotoLibrary,kPhotosFrameworkUsage,kToOtherLoginVc,kAVPlayerLayerUsage,kSystemOriginSharedVc,kQrCodeReader,kQrCodeGenerator, kAudioHandle,kSendEmail];
     }
     return _listArray;
 }
@@ -89,7 +91,48 @@
         [self qrcodeReader];
     } else if ([text isEqualToString:kQrCodeGenerator]) {
         [self qrcodeGenerator];
+    } else if ([text isEqualToString:kAudioHandle]) {
+        [self audioHandle];
+    } else if ([text isEqualToString:kSendEmail]) {
+        [self sendEmailToMailbox];
     }
+}
+
+#pragma mark - 发送邮件到邮箱
+- (void)sendEmailToMailbox {
+    if ([self.videoList count] <= 0) {
+        NSLog(@"not have video.");
+        return;
+    }
+    
+    ZLVideoModel *model = [self.videoList firstObject];
+    
+    
+    
+    AVAsset *asset = [AVAsset assetWithURL:model.videoFileUrl];
+    AVAssetExportSession *exportSession = [AVAssetExportSession exportSessionWithAsset:asset presetName:AVAssetExportPresetMediumQuality];
+    exportSession.outputFileType = AVFileTypeMPEG4;
+    exportSession.shouldOptimizeForNetworkUse = YES;
+    NSString *filePath = [NSTemporaryDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.mp4", [NSUUID UUID].UUIDString]];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
+        [[NSFileManager defaultManager] removeItemAtPath:filePath error:nil];
+    }
+    
+    exportSession.outputURL = [NSURL fileURLWithPath:filePath];
+    [exportSession exportAsynchronouslyWithCompletionHandler:^{
+        if (exportSession.status == AVAssetExportSessionStatusCompleted) {
+            [SystemShareViewController sendEmailWithFilePath:@[exportSession.outputURL.path] viewController:self];
+        } else {
+            NSLog(@"%@", exportSession.error);
+            [[[UIAlertView alloc] initWithTitle:@"Error" message:exportSession.error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
+        }
+    }];
+}
+
+#pragma mark - 音频处理：音频录制、播放
+- (void)audioHandle {
+    AudioRecorderViewController *audioVc = [[AudioRecorderViewController alloc] init];
+    [self.navigationController pushViewController:audioVc animated:YES];
 }
 
 #pragma mark - 二维码生成
@@ -147,7 +190,7 @@
     [self presentViewController:picker animated:YES completion:nil];
 }
 
-#pragma mark - 上传视频文件到服务器
+#pragma mark - 上传视频到服务器
 - (void)uploadVideoFileToServer {
     if ([self.videoList count] <= 0) {
         return;
@@ -167,64 +210,14 @@
     exportSession.outputURL = [NSURL fileURLWithPath:filePath];
     [exportSession exportAsynchronouslyWithCompletionHandler:^{
         if (exportSession.status == AVAssetExportSessionStatusCompleted) {
-            
-            NSString *boundary = [self generateBoundaryString];
-            // 请求的Url
-            NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://192.168.0.105:8080/MyApplicationPrj/FileUpload"]];
-            [request setHTTPMethod:@"POST"];
-            // 设置ContentType
-            NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
-            [request setValue:contentType forHTTPHeaderField: @"Content-Type"];
-            NSString *fieldName = @"movie.mp4";
-            NSData *httpBody = [self createBodyWithBoundary:boundary parameters:nil paths:@[exportSession.outputURL.path] fieldName:fieldName];
-           [[[NSURLSession sharedSession] uploadTaskWithRequest:request fromData:httpBody completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                NSString *result = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                NSLog(@"%@\n%@", result,error);
-            }] resume];
+            [FileUploadTool uploadVideo:exportSession.outputURL.path completionHandler:^(NSString * _Nonnull result, NSError * _Nonnull error) {
+                [[[UIAlertView alloc] initWithTitle:result message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
+            }];
         } else {
             NSLog(@"%@", exportSession.error);
+            [[[UIAlertView alloc] initWithTitle:@"Error" message:exportSession.error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
         }
     }];
-}
-
-- (NSData *)createBodyWithBoundary:(NSString *)boundary
-                        parameters:(NSDictionary *)parameters
-                             paths:(NSArray *)paths
-                         fieldName:(NSString *)fieldName {
-    NSMutableData *httpBody = [NSMutableData data];
-    // 文本参数
-    [parameters enumerateKeysAndObjectsUsingBlock:^(NSString *parameterKey, NSString *parameterValue, BOOL *stop) {
-        [httpBody appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-        [httpBody appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n", parameterKey] dataUsingEncoding:NSUTF8StringEncoding]];
-        [httpBody appendData:[[NSString stringWithFormat:@"%@\r\n", parameterValue] dataUsingEncoding:NSUTF8StringEncoding]];
-    }];
-    
-    // 本地文件的NSData
-    for (NSString *path in paths) {
-        NSString *filename  = [path lastPathComponent];
-        NSData   *data      = [NSData dataWithContentsOfFile:path];
-        NSString *mimetype  = [self mimeTypeForPath:path];
-        [httpBody appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-        [httpBody appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"%@\"\r\n", fieldName, filename] dataUsingEncoding:NSUTF8StringEncoding]];
-        [httpBody appendData:[[NSString stringWithFormat:@"Content-Type: %@\r\n\r\n", mimetype] dataUsingEncoding:NSUTF8StringEncoding]];
-        [httpBody appendData:data];
-        [httpBody appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-    }
-    
-    [httpBody appendData:[[NSString stringWithFormat:@"--%@--\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-    return httpBody;
-}
-
-- (NSString *)mimeTypeForPath:(NSString *)path {
-    CFStringRef extension = (__bridge CFStringRef)[path pathExtension];
-    CFStringRef UTI = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, extension, NULL);
-    NSString *mimetype = CFBridgingRelease(UTTypeCopyPreferredTagWithClass(UTI, kUTTagClassMIMEType));
-    CFRelease(UTI);
-    return mimetype;
-}
-
-- (NSString *)generateBoundaryString {
-    return [NSString stringWithFormat:@"Boundary-%@", [[NSUUID UUID] UUIDString]];
 }
 
 #pragma mark - 取出视频中的一个帧

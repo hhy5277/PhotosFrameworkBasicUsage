@@ -21,6 +21,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Share qrcode" style:UIBarButtonItemStylePlain target:self action:@selector(sendQrcodeImageToMailboxOnClick)];
+}
+
+- (void)sendQrcodeImageToMailboxOnClick {
+    if (self.qrcodeImv.image == nil) {
+        [[[UIAlertView alloc] initWithTitle:@"please generator qrcode first." message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
+        return;
+    }
+    NSString *filepath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"qrcode.png"];
+    BOOL flag = [UIImagePNGRepresentation(self.qrcodeImv.image) writeToFile:filepath atomically:YES];
+    if (flag) {
+        [SystemShareViewController sendEmailWithFilePath:@[filepath] viewController:self];
+    } else {
+        [[[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"error - %d",flag] message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
+    }
 }
 
 - (IBAction)generatorOnClick {
