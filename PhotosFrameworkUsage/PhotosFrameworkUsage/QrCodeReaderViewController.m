@@ -8,8 +8,14 @@
 
 #import "QrCodeReaderViewController.h"
 #import <AVFoundation/AVFoundation.h>
+#import "QRScanView.h"
 
 @interface QrCodeReaderViewController () <AVCaptureMetadataOutputObjectsDelegate>
+{
+    AVCaptureMetadataOutput *output;
+    AVCaptureVideoPreviewLayer *layer;
+    CGRect _scanRect;
+}
 @property (nonatomic, strong) AVCaptureSession *session;
 @end
 
@@ -18,6 +24,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // 添加通知
+    [[NSNotificationCenter defaultCenter] addObserverForName:AVCaptureInputPortFormatDescriptionDidChangeNotification object:nil queue:[NSOperationQueue currentQueue] usingBlock:^(NSNotification * _Nonnull note) {
+        // 如果不设置，整个屏幕都可以扫
+        output.rectOfInterest = [layer metadataOutputRectOfInterestForRect:_scanRect];
+    }];
+    
+//    [[NSNotificationCenter defaultCenter] addObserverForName:AVCaptureInputPortFormatDescriptionDidChangeNotification object:nil queue:[NSOperationQueue currentQueue] usingBlock:^(NSNotification * _Nonnull note) {
+//        [output setRectOfInterest:[layer metadataOutputRectOfInterestForRect:CGRectMake(80, 80, 160, 160)]];
+//    }];
+    
+    CGFloat scanWH = 220;
+    CGFloat scanX = (kScreenWidth - scanWH) * 0.5;
+    CGFloat scanY = (kScreenHeight - scanWH) * 0.5;
+    _scanRect = CGRectMake(scanX, scanY, scanWH, scanWH);
     AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
     if (status == AVAuthorizationStatusAuthorized || status == AVAuthorizationStatusRestricted) {
         [self loadScanView];
@@ -43,7 +63,7 @@
     //创建设备输入流
     AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:device error:nil];
     //创建元数据输出流
-    AVCaptureMetadataOutput *output = [[AVCaptureMetadataOutput alloc]init];
+    output = [[AVCaptureMetadataOutput alloc]init];
     //为输出流对象设置代理 并在主线程里刷新
     [output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
     
@@ -68,11 +88,16 @@
                                  AVMetadataObjectTypeCode128Code,
                                  AVMetadataObjectTypePDF417Code];
     
-    AVCaptureVideoPreviewLayer *layer = [AVCaptureVideoPreviewLayer layerWithSession:self.session];
+    layer = [AVCaptureVideoPreviewLayer layerWithSession:self.session];
     layer.videoGravity = AVLayerVideoGravityResizeAspectFill;
 //    layer.frame = self.view.layer.bounds;
     layer.frame = [UIScreen mainScreen].bounds;
     [self.view.layer insertSublayer:layer atIndex:0];
+    
+    // 添加扫描视图
+    QRScanView *scanView = [[QRScanView alloc] initWithScanRect:_scanRect];
+    [self.view addSubview:scanView];
+    
     //开始捕获
     [self.session startRunning];
 }
@@ -92,6 +117,7 @@
 
 - (void)dealloc {
     NSLog(@"QrCodeReader - dealloc");
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     [self.session stopRunning];
     self.session = nil;
 }

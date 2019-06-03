@@ -12,6 +12,8 @@
 		A238B0BE22A11FAE001D143C /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A238B0BD22A11FAE001D143C /* MessageUI.framework */; };
 		A238B0C222A127B6001D143C /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A238B0C022A127B6001D143C /* BaseViewController.m */; };
 		A238B0C322A127B6001D143C /* BaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A238B0C122A127B6001D143C /* BaseViewController.xib */; };
+		A2414EFF22A4B56A006A61CA /* QRScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2414EFE22A4B56A006A61CA /* QRScanView.m */; };
+		A2414F0122A4B579006A61CA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2414F0022A4B579006A61CA /* CoreGraphics.framework */; };
 		A24A8DF5229F72F2005306E9 /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A24A8DF3229F72F2005306E9 /* ContactsViewController.m */; };
 		A24A8DF6229F72F2005306E9 /* ContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A24A8DF4229F72F2005306E9 /* ContactsViewController.xib */; };
 		A24A8DF8229F7328005306E9 /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A24A8DF7229F7328005306E9 /* Contacts.framework */; };
@@ -69,6 +71,9 @@
 		A238B0BF22A127B6001D143C /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		A238B0C022A127B6001D143C /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		A238B0C122A127B6001D143C /* BaseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseViewController.xib; sourceTree = "<group>"; };
+		A2414EFD22A4B56A006A61CA /* QRScanView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QRScanView.h; sourceTree = "<group>"; };
+		A2414EFE22A4B56A006A61CA /* QRScanView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QRScanView.m; sourceTree = "<group>"; };
+		A2414F0022A4B579006A61CA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A24A8DF2229F72F2005306E9 /* ContactsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
 		A24A8DF3229F72F2005306E9 /* ContactsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
 		A24A8DF4229F72F2005306E9 /* ContactsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactsViewController.xib; sourceTree = "<group>"; };
@@ -148,6 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2414F0122A4B579006A61CA /* CoreGraphics.framework in Frameworks */,
 				A238B0BE22A11FAE001D143C /* MessageUI.framework in Frameworks */,
 				A2E5F0F522A0C27000876A89 /* AVFoundation.framework in Frameworks */,
 				A24A8DFA229F7377005306E9 /* ContactsUI.framework in Frameworks */,
@@ -165,6 +171,7 @@
 		5E556BCC37BE0110E900E540 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A2414F0022A4B579006A61CA /* CoreGraphics.framework */,
 				A238B0BD22A11FAE001D143C /* MessageUI.framework */,
 				A2E5F0F422A0C27000876A89 /* AVFoundation.framework */,
 				A24A8DF9229F7377005306E9 /* ContactsUI.framework */,
@@ -261,6 +268,8 @@
 				A238B0BF22A127B6001D143C /* BaseViewController.h */,
 				A238B0C022A127B6001D143C /* BaseViewController.m */,
 				A238B0C122A127B6001D143C /* BaseViewController.xib */,
+				A2414EFD22A4B56A006A61CA /* QRScanView.h */,
+				A2414EFE22A4B56A006A61CA /* QRScanView.m */,
 			);
 			path = PhotosFrameworkUsage;
 			sourceTree = "<group>";
@@ -434,6 +443,7 @@
 				A279F74D229CCC0C003FAC27 /* LZImageBrowserManger.m in Sources */,
 				A279F763229CCC26003FAC27 /* ZLVideoModel.m in Sources */,
 				A2C83489229FDFCB005DB6DF /* SystemShareViewController.m in Sources */,
+				A2414EFF22A4B56A006A61CA /* QRScanView.m in Sources */,
 				A2C83484229FDFAF005DB6DF /* QrCodeGeneratorViewController.m in Sources */,
 				A279F74F229CCC0C003FAC27 /* LZImageBrowserSubView.m in Sources */,
 				A279F735229CCB9D003FAC27 /* main.m in Sources */,

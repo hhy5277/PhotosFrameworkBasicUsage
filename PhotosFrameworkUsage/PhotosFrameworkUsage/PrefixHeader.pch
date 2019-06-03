@@ -13,4 +13,8 @@
 #import "BaseViewController.h"
 #import "SystemShareViewController.h"
 
+#define kScreenBounds [UIScreen mainScreen].bounds
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+
 #endif /* PrefixHeader_pch */
