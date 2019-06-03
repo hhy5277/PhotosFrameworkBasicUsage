@@ -22,6 +22,7 @@
     [super viewDidLoad];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Share qrcode" style:UIBarButtonItemStylePlain target:self action:@selector(sendQrcodeImageToMailboxOnClick)];
+    [self generatorOnClick];
 }
 
 - (void)sendQrcodeImageToMailboxOnClick {
@@ -57,7 +58,8 @@
     
     // 5.显示二维码
     //    self.qrcodeImv.image = [UIImage imageWithCIImage:outputImage];
-    self.qrcodeImv.image = [self createNonInterpolatedUIImageFormCIImage:outputImage withSize:120];
+    // 显示放大后清晰的二维码图片
+    self.qrcodeImv.image = [self createNonInterpolatedUIImageFormCIImage:outputImage withSize:220];
 //    self.qrcodeImv.image = [self qrcode:[self createNonInterpolatedUIImageFormCIImage:outputImage withSize:120] centerLogo:[UIImage imageNamed:@"xingxing_change"]];
 }
 

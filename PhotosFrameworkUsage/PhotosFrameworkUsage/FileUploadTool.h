@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FileUploadTool : NSObject
 
++ (void)truncateFiles;
+
 + (NSArray *)getFiles;
 
 + (NSData *)getFileDataWithFileid:(NSInteger)fileid;

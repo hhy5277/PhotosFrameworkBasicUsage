@@ -11,7 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BaseViewController : UIViewController
-
++ (void)alertWithTitle:(NSString *)title;
++ (void)alertWithMessage:(NSString *)message;
++ (void)alertWithTitle:(NSString *)title message:(NSString *)message;
 @end
 
 NS_ASSUME_NONNULL_END

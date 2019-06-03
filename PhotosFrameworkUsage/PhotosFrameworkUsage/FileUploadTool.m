@@ -41,6 +41,12 @@ static FMDatabase *_database;
     return arr;
 }
 
++ (void)truncateFiles {
+    [self.database open];
+    [self.database executeUpdate:@"delete from tb_files;"];
+    [self.database close];
+}
+
 + (NSData *)getFileDataWithFileid:(NSInteger)fileid {
     [self.database open];
     FMResultSet *rst = [self.database executeQuery:@"select filedata from tb_files where fileid=?;" withArgumentsInArray:@[@(fileid)]];

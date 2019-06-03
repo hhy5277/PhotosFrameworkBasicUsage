@@ -20,6 +20,18 @@
     
 }
 
++ (void)alertWithTitle:(NSString *)title {
+    [self alertWithTitle:title message:nil];
+}
+
++ (void)alertWithMessage:(NSString *)message {
+    [self alertWithTitle:@"notice" message:message];
+}
+
++ (void)alertWithTitle:(NSString *)title message:(NSString *)message {
+    [[[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+}
+
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(nullable NSError *)error  {
     NSLog(@"%d - %@", result,error);
     

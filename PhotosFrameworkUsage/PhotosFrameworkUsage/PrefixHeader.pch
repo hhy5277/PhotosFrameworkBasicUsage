@@ -12,6 +12,7 @@
 #import "FileUploadTool.h"
 #import "BaseViewController.h"
 #import "SystemShareViewController.h"
+#import "MBProgressHUD.h"
 
 #define kScreenBounds [UIScreen mainScreen].bounds
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width

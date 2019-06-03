@@ -18,6 +18,7 @@
 #define kPausePlayAudio @"暂停播放录音"
 #define kStopPlayAudio @"停止播放录音"
 #define kAudioList @"录音列表"
+#define kDeleteAllFiles @"清空文件列表"
 
 @interface AudioRecorderViewController () <UITableViewDataSource,UITableViewDelegate,AVAudioRecorderDelegate,AVAudioPlayerDelegate>
 {
@@ -37,7 +38,7 @@
 
 - (NSArray *)listArr {
     if (_listArr == nil) {
-        _listArr = @[kRecorderAudio,kPauseRecorderAudio,kStopRecoderAudio,kPlayRecoderAudio,kPausePlayAudio,kStopPlayAudio,kAudioList];
+        _listArr = @[kRecorderAudio,kPauseRecorderAudio,kStopRecoderAudio,kPlayRecoderAudio,kPausePlayAudio,kStopPlayAudio,kAudioList,kDeleteAllFiles];
     }
     return _listArr;
 }
@@ -76,7 +77,19 @@
         [self pauseRecorderAudio];
     } else if ([text isEqualToString:kAudioList]) {
         [self audioList];
+    } else if ([text isEqualToString:kDeleteAllFiles]) {
+        [self deleteAllFiles];
     }
+}
+
+#pragma mark - 清空录音列表
+- (void)deleteAllFiles {
+    [FileUploadTool truncateFiles];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.removeFromSuperViewOnHide = YES;
+    hud.mode = MBProgressHUDModeText;
+    hud.label.text = @"删除完成";
+    [hud hideAnimated:YES afterDelay:1];
 }
 
 - (void)viewDidLoad {
@@ -204,7 +217,9 @@ static int currentTime = 0;
 // 停止录音
 - (IBAction)stopRecorder {
     currentTime = 0;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"%02d", (currentTime++)] style:UIBarButtonItemStylePlain target:nil action:nil];
     dispatch_source_cancel(timer);
+    timer = nil;
     [self.recorder stop];
 }
 
