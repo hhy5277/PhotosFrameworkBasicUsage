@@ -58,6 +58,7 @@
 		A2E5F0F222A0C24A00876A89 /* AudioRecorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E5F0F022A0C24A00876A89 /* AudioRecorderViewController.m */; };
 		A2E5F0F322A0C24A00876A89 /* AudioRecorderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2E5F0F122A0C24A00876A89 /* AudioRecorderViewController.xib */; };
 		A2E5F0F522A0C27000876A89 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E5F0F422A0C27000876A89 /* AVFoundation.framework */; };
+		A2FEDFFF22A50C540009B52B /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2FEDFFE22A50C540009B52B /* LocalAuthentication.framework */; };
 		B11E3DC7CDE6D625AFA6A0F1 /* libPods-PhotosFrameworkUsage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F45DA5A71F4E24256E35FD9 /* libPods-PhotosFrameworkUsage.a */; };
 /* End PBXBuildFile section */
 
@@ -145,6 +146,7 @@
 		A2E5F0F122A0C24A00876A89 /* AudioRecorderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioRecorderViewController.xib; sourceTree = "<group>"; };
 		A2E5F0F422A0C27000876A89 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A2E5F0F722A0CAAC00876A89 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		A2FEDFFE22A50C540009B52B /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		BBCA052C9F19569B3FB183A2 /* Pods-PhotosFrameworkUsage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosFrameworkUsage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PhotosFrameworkUsage/Pods-PhotosFrameworkUsage.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,6 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2FEDFFF22A50C540009B52B /* LocalAuthentication.framework in Frameworks */,
 				A2414F0122A4B579006A61CA /* CoreGraphics.framework in Frameworks */,
 				A238B0BE22A11FAE001D143C /* MessageUI.framework in Frameworks */,
 				A2E5F0F522A0C27000876A89 /* AVFoundation.framework in Frameworks */,
@@ -171,6 +174,7 @@
 		5E556BCC37BE0110E900E540 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A2FEDFFE22A50C540009B52B /* LocalAuthentication.framework */,
 				A2414F0022A4B579006A61CA /* CoreGraphics.framework */,
 				A238B0BD22A11FAE001D143C /* MessageUI.framework */,
 				A2E5F0F422A0C27000876A89 /* AVFoundation.framework */,
@@ -615,6 +619,7 @@
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PhotosFrameworkUsage/PrefixHeader.pch";
 				INFOPLIST_FILE = PhotosFrameworkUsage/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -638,6 +643,7 @@
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PhotosFrameworkUsage/PrefixHeader.pch";
 				INFOPLIST_FILE = PhotosFrameworkUsage/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

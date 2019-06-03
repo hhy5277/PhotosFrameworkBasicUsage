@@ -42,7 +42,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     CNContact *c = self.contactsInfoArr[indexPath.row];
-    
+    NSString *telphone = [@"tel:" stringByAppendingString:[c.phoneNumbers firstObject].value.stringValue];
+    NSURL *telUrl = [NSURL URLWithString:telphone];
+    if ([[UIApplication sharedApplication] canOpenURL:telUrl]) {
+        [[UIApplication sharedApplication] openURL:telUrl];
+    } else {
+        [BaseViewController alertWithTitle:@"手机号错误"];
+    }
 }
 
 - (void)viewDidLoad {

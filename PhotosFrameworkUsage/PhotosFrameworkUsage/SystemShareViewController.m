@@ -8,6 +8,7 @@
 
 #import "SystemShareViewController.h"
 #import <MessageUI/MessageUI.h>
+#import <LocalAuthentication/LocalAuthentication.h>
 
 @interface SystemShareViewController ()
 
@@ -18,6 +19,81 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+}
+
++ (void)authenticationPass {
+    // 首先判断版本号
+    if (NSFoundationVersionNumber < NSFoundationVersionNumber_iOS_8_0) {
+        [BaseViewController alertWithTitle:@"系统版本不支持TouchID"];
+        return;
+    }
+    
+    LAContext *context = [[LAContext alloc] init];
+    context.localizedFallbackTitle = @"输入密码";
+    if (@available(iOS 10.0, *)) {
+        // iOS10以上支持取消按钮,设置取消按钮的标题
+        context.localizedCancelTitle = @"cancel title";
+    } else {
+        
+    }
+    
+    // error为返回验证错误码
+    NSError *error = nil;
+    
+    /**
+     是否支持指纹验证
+     evaluatePolicy方法是对TouchID进行验证,Block回调中如果success为YES则验证成功,为NO验证失败,并对error进行解析.
+     */
+    if ([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&error]) {
+        // 调起指纹验证对话框
+        [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:@"通过Home键验证已有手机指纹" reply:^(BOOL success, NSError * _Nullable error) {
+            
+            if (success) {  // 验证成功
+                [BaseViewController alertWithMessage:@"TouchID 验证成功"];
+            } else if (error) {
+                NSString *title = @"";
+                switch (error.code) {
+                    case LAErrorAuthenticationFailed:
+                        title = @"验证失败";
+                        break;
+                    case LAErrorUserCancel:
+                        title = @"TouchID 被用户手动取消";
+                        break;
+                    case LAErrorUserFallback:
+                        title = @"用户不使用TouchID, 选择手动输入密码";
+                        break;
+                    case LAErrorSystemCancel:
+                        title = @"TouchID 被系统取消(如遇到来电, 锁屏, 按了Home键等)";
+                        break;
+                    case LAErrorPasscodeNotSet:
+                        title = @"ToouchID 无法启动，因为用户没有设置密码";
+                        break;
+                    case LAErrorTouchIDNotEnrolled:
+                        title = @"TouchID无法启动，因为用户没有设置TouchID";
+                        break;
+                    case LAErrorTouchIDNotAvailable:
+                        title = @"TouchID 无效";
+                        break;
+                    case LAErrorTouchIDLockout:
+                        title = @"TouchID被锁定（连续多次验证TouchID失败，系统需要用户手动输入密码）";
+                        break;
+                    case LAErrorAppCancel:
+                        title = @"当前软件被挂起并取消授权（如App进入了后台等）";
+                        break;
+                    case LAErrorInvalidContext:
+                        title = @"当前软件被挂起并取消了授权（LAContext对象无效）";
+                        break;
+                    default:
+                        break;
+                }
+                [BaseViewController alertWithMessage:title];
+            }
+            
+        }];
+    } else {
+        [BaseViewController alertWithTitle:@"当前设备不支持TouchID"];
+    }
+    
 }
 
 + (void)sendEmailWithFilePath:(NSArray *)filePaths viewController:(UIViewController *)viewController {

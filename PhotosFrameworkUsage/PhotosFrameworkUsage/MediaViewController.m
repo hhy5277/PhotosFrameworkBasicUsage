@@ -21,6 +21,7 @@
 
 #define kVideoMaximumDuration 30
 
+#define kAuthenticationPass @"指纹验证"
 #define kRecordVideoUseImagePickerController @"使用UIImagePickerController录制视频"
 #define kPlayVideoWithAVPlayerViewController @"使用AVPlayerViewController播放视频"
 #define kVideoSaveToAlbum @"将视频保存到相簿"
@@ -51,7 +52,7 @@
 
 - (NSArray *)listArray {
     if (!_listArray) {
-        _listArray = @[kContactsFrameworkUsage,kRecordVideoUseImagePickerController,kPlayVideoWithAVPlayerViewController,kVideoSaveToAlbum,kGetMediaInfoWithAVAsset,kConvertWithAVAssetExportSession,kCompressWithAVAssetExportSession,kVideoFrameWithAVAssetImageGenerator,kUploadVideoToServer,kSelectVideoOfPhotoLibrary,kPhotosFrameworkUsage,kToOtherLoginVc,kAVPlayerLayerUsage,kSystemOriginSharedVc,kQrCodeReader,kQrCodeGenerator, kAudioHandle,kSendEmail];
+        _listArray = @[kAuthenticationPass,kContactsFrameworkUsage,kRecordVideoUseImagePickerController,kPlayVideoWithAVPlayerViewController,kVideoSaveToAlbum,kGetMediaInfoWithAVAsset,kConvertWithAVAssetExportSession,kCompressWithAVAssetExportSession,kVideoFrameWithAVAssetImageGenerator,kUploadVideoToServer,kSelectVideoOfPhotoLibrary,kPhotosFrameworkUsage,kToOtherLoginVc,kAVPlayerLayerUsage,kSystemOriginSharedVc,kQrCodeReader,kQrCodeGenerator, kAudioHandle,kSendEmail];
     }
     return _listArray;
 }
@@ -95,7 +96,14 @@
         [self audioHandle];
     } else if ([text isEqualToString:kSendEmail]) {
         [self sendEmailToMailbox];
+    } else if ([text isEqualToString:kAuthenticationPass]) {
+        [self authenticationPass];
     }
+}
+
+#pragma mark - 指纹验证
+- (void)authenticationPass {
+    [SystemShareViewController authenticationPass];
 }
 
 #pragma mark - 发送邮件到邮箱
