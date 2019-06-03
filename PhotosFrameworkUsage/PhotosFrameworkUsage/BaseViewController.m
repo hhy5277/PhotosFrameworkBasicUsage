@@ -20,6 +20,13 @@
     
 }
 
++ (void)hudWithTitle:(NSString *)title {
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[[UIApplication sharedApplication] keyWindow] animated:YES];
+    hud.label.text = title;
+    hud.mode = MBProgressHUDModeText;
+    [hud hideAnimated:YES afterDelay:1.2];
+}
+
 + (void)alertWithTitle:(NSString *)title {
     [self alertWithTitle:title message:nil];
 }

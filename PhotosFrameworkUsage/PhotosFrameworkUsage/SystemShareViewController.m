@@ -132,33 +132,20 @@
     }
 }
 
-/*
- 
- //UIActivityTypePostToFacebook,
- //UIActivityTypePostToTwitter,
- //UIActivityTypePostToWeibo,
- //UIActivityTypeMessage,
- //UIActivityTypeMail,
- //UIActivityTypePrint,
- //UIActivityTypeCopyToPasteboard,
- //UIActivityTypeAssignToContact,
- //UIActivityTypeSaveToCameraRoll,
- //UIActivityTypeAddToReadingList,
- //UIActivityTypePostToFlickr,
- //UIActivityTypePostToVimeo,
- //UIActivityTypePostToTencentWeibo,
- //UIActivityTypeAirDrop,
- //UIActivityTypeOpenInIBooks
- */
 + (void)shareShowInViewController:(UIViewController *)viewController {
+    // 分享的title
     NSString *textToShare = @"我是ZL，欢迎关注我！";
+    // 分享的图片
     UIImage *imageToShare = [UIImage imageNamed:@"icon-60"];
+    // 分享的链接地址
     NSURL *urlToShare = [NSURL URLWithString:@"https://www.jianshu.com/u/9cb1a1857948"];
+    // 顺序可以混乱，系统会自动识别类型
     NSArray *activityItems = @[textToShare,urlToShare,imageToShare];
-    UIActivityViewController *vc = [[UIActivityViewController alloc] initWithActivityItems:activityItems
-                                                                     applicationActivities:@[]];
+    // 调起系统分享视图
+    UIActivityViewController *vc = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:@[]];
+    // 设置忽略分享App的属性
     //    vc.excludedActivityTypes = @[UIActivityTypePostToVimeo];
-    
+    // 分享结果后的回调Block
     vc.completionWithItemsHandler = ^(UIActivityType  _Nullable activityType, BOOL completed, NSArray * _Nullable returnedItems, NSError * _Nullable activityError) {
         NSLog(@"%@", activityType);
         if (completed) {

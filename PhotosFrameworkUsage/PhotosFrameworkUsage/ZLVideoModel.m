@@ -10,4 +10,9 @@
 
 @implementation ZLVideoModel
 
+- (NSString *)playVideo:(NSString *)urlStr {
+    NSLog(@"%@", urlStr);
+    return @"播放完成!!!!!!";
+}
+
 @end

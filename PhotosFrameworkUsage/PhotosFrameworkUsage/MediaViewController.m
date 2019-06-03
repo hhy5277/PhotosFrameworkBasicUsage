@@ -18,6 +18,7 @@
 #import "QrCodeReaderViewController.h"
 #import "QrCodeGeneratorViewController.h"
 #import "AudioRecorderViewController.h"
+#import "OCAndJSViewController.h"
 
 #define kVideoMaximumDuration 30
 
@@ -41,6 +42,7 @@
 #define kQrCodeGenerator @"二维码生成"
 #define kAudioHandle @"音频录制、播放"
 #define kSendEmail @"发送邮件"
+#define kOCAndJSExecute @"OC与JS交互"
 
 @interface MediaViewController () <UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -52,7 +54,7 @@
 
 - (NSArray *)listArray {
     if (!_listArray) {
-        _listArray = @[kAuthenticationPass,kContactsFrameworkUsage,kRecordVideoUseImagePickerController,kPlayVideoWithAVPlayerViewController,kVideoSaveToAlbum,kGetMediaInfoWithAVAsset,kConvertWithAVAssetExportSession,kCompressWithAVAssetExportSession,kVideoFrameWithAVAssetImageGenerator,kUploadVideoToServer,kSelectVideoOfPhotoLibrary,kPhotosFrameworkUsage,kToOtherLoginVc,kAVPlayerLayerUsage,kSystemOriginSharedVc,kQrCodeReader,kQrCodeGenerator, kAudioHandle,kSendEmail];
+        _listArray = @[kOCAndJSExecute,kAuthenticationPass,kContactsFrameworkUsage,kRecordVideoUseImagePickerController,kPlayVideoWithAVPlayerViewController,kVideoSaveToAlbum,kGetMediaInfoWithAVAsset,kConvertWithAVAssetExportSession,kCompressWithAVAssetExportSession,kVideoFrameWithAVAssetImageGenerator,kUploadVideoToServer,kSelectVideoOfPhotoLibrary,kPhotosFrameworkUsage,kToOtherLoginVc,kAVPlayerLayerUsage,kSystemOriginSharedVc,kQrCodeReader,kQrCodeGenerator, kAudioHandle,kSendEmail];
     }
     return _listArray;
 }
@@ -98,7 +100,15 @@
         [self sendEmailToMailbox];
     } else if ([text isEqualToString:kAuthenticationPass]) {
         [self authenticationPass];
+    } else if ([text isEqualToString:kOCAndJSExecute]) {
+        [self ocAndJSExecute];
     }
+}
+
+#pragma mark - OC与JS交互
+- (void)ocAndJSExecute {
+    OCAndJSViewController *ocAndjsVc = [[OCAndJSViewController alloc] init];
+    [self.navigationController pushViewController:ocAndjsVc animated:YES];
 }
 
 #pragma mark - 指纹验证

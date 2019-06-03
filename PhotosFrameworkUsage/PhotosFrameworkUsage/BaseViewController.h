@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)alertWithTitle:(NSString *)title;
 + (void)alertWithMessage:(NSString *)message;
 + (void)alertWithTitle:(NSString *)title message:(NSString *)message;
++ (void)hudWithTitle:(NSString *)title;
 @end
 
 NS_ASSUME_NONNULL_END

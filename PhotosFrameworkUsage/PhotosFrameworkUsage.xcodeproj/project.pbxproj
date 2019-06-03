@@ -59,6 +59,10 @@
 		A2E5F0F322A0C24A00876A89 /* AudioRecorderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2E5F0F122A0C24A00876A89 /* AudioRecorderViewController.xib */; };
 		A2E5F0F522A0C27000876A89 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E5F0F422A0C27000876A89 /* AVFoundation.framework */; };
 		A2FEDFFF22A50C540009B52B /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2FEDFFE22A50C540009B52B /* LocalAuthentication.framework */; };
+		A2FEE00122A51AB40009B52B /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2FEE00022A51AB40009B52B /* JavaScriptCore.framework */; };
+		A2FEE00522A522100009B52B /* OCAndJSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2FEE00322A522100009B52B /* OCAndJSViewController.m */; };
+		A2FEE00622A522100009B52B /* OCAndJSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2FEE00422A522100009B52B /* OCAndJSViewController.xib */; };
+		A2FEE00822A522250009B52B /* OCAndJS.html in Resources */ = {isa = PBXBuildFile; fileRef = A2FEE00722A522250009B52B /* OCAndJS.html */; };
 		B11E3DC7CDE6D625AFA6A0F1 /* libPods-PhotosFrameworkUsage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F45DA5A71F4E24256E35FD9 /* libPods-PhotosFrameworkUsage.a */; };
 /* End PBXBuildFile section */
 
@@ -147,6 +151,11 @@
 		A2E5F0F422A0C27000876A89 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A2E5F0F722A0CAAC00876A89 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		A2FEDFFE22A50C540009B52B /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		A2FEE00022A51AB40009B52B /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		A2FEE00222A522100009B52B /* OCAndJSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCAndJSViewController.h; sourceTree = "<group>"; };
+		A2FEE00322A522100009B52B /* OCAndJSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCAndJSViewController.m; sourceTree = "<group>"; };
+		A2FEE00422A522100009B52B /* OCAndJSViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OCAndJSViewController.xib; sourceTree = "<group>"; };
+		A2FEE00722A522250009B52B /* OCAndJS.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = OCAndJS.html; sourceTree = "<group>"; };
 		BBCA052C9F19569B3FB183A2 /* Pods-PhotosFrameworkUsage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosFrameworkUsage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PhotosFrameworkUsage/Pods-PhotosFrameworkUsage.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -155,6 +164,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2FEE00122A51AB40009B52B /* JavaScriptCore.framework in Frameworks */,
 				A2FEDFFF22A50C540009B52B /* LocalAuthentication.framework in Frameworks */,
 				A2414F0122A4B579006A61CA /* CoreGraphics.framework in Frameworks */,
 				A238B0BE22A11FAE001D143C /* MessageUI.framework in Frameworks */,
@@ -174,6 +184,7 @@
 		5E556BCC37BE0110E900E540 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A2FEE00022A51AB40009B52B /* JavaScriptCore.framework */,
 				A2FEDFFE22A50C540009B52B /* LocalAuthentication.framework */,
 				A2414F0022A4B579006A61CA /* CoreGraphics.framework */,
 				A238B0BD22A11FAE001D143C /* MessageUI.framework */,
@@ -274,6 +285,10 @@
 				A238B0C122A127B6001D143C /* BaseViewController.xib */,
 				A2414EFD22A4B56A006A61CA /* QRScanView.h */,
 				A2414EFE22A4B56A006A61CA /* QRScanView.m */,
+				A2FEE00222A522100009B52B /* OCAndJSViewController.h */,
+				A2FEE00322A522100009B52B /* OCAndJSViewController.m */,
+				A2FEE00422A522100009B52B /* OCAndJSViewController.xib */,
+				A2FEE00722A522250009B52B /* OCAndJS.html */,
 			);
 			path = PhotosFrameworkUsage;
 			sourceTree = "<group>";
@@ -385,6 +400,8 @@
 				A2C83471229FCF21005DB6DF /* OtherLoginViewController.xib in Resources */,
 				A279F75F229CCC26003FAC27 /* MediaViewController.xib in Resources */,
 				A2C8347B229FD227005DB6DF /* PlayerLayerViewController.xib in Resources */,
+				A2FEE00622A522100009B52B /* OCAndJSViewController.xib in Resources */,
+				A2FEE00822A522250009B52B /* OCAndJS.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +474,7 @@
 				A279F765229CCC26003FAC27 /* PhotoCollectionViewCell.m in Sources */,
 				A279F750229CCC0C003FAC27 /* LZImageBrowserTranslation.m in Sources */,
 				A2E5F0F222A0C24A00876A89 /* AudioRecorderViewController.m in Sources */,
+				A2FEE00522A522100009B52B /* OCAndJSViewController.m in Sources */,
 				A279F761229CCC26003FAC27 /* MediaViewController.m in Sources */,
 				A279F76C229CCC36003FAC27 /* ViewController.m in Sources */,
 				A279F751229CCC0C003FAC27 /* LZImageBrowserViewController.m in Sources */,

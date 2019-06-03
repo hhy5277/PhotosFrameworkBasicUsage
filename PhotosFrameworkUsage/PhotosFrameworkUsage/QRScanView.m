@@ -89,6 +89,8 @@
         self.flashBtn.hidden = NO;
     } else if (self.flashBtn.selected == NO && self.flashBtn.hidden == NO) {
         self.flashBtn.hidden = YES;
+    } else if (self.flashBtn.selected == NO) {
+        self.flashBtn.hidden = NO;
     }
 }
 

@@ -7,10 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <JavaScriptCore/JavaScriptCore.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZLVideoModel : NSObject
+@protocol webJsExport <JSExport>
+- (NSString *)playVideo:(NSString *)urlStr;
+@end
+
+@interface ZLVideoModel : NSObject <webJsExport>
 @property (nonatomic, strong) NSURL *videoFileUrl;
 @property (nonatomic, copy) NSString *mediaType;
 @end
