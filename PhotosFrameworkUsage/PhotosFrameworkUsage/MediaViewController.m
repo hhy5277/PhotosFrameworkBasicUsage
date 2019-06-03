@@ -107,8 +107,6 @@
     
     ZLVideoModel *model = [self.videoList firstObject];
     
-    
-    
     AVAsset *asset = [AVAsset assetWithURL:model.videoFileUrl];
     AVAssetExportSession *exportSession = [AVAssetExportSession exportSessionWithAsset:asset presetName:AVAssetExportPresetMediumQuality];
     exportSession.outputFileType = AVFileTypeMPEG4;
@@ -121,7 +119,9 @@
     exportSession.outputURL = [NSURL fileURLWithPath:filePath];
     [exportSession exportAsynchronouslyWithCompletionHandler:^{
         if (exportSession.status == AVAssetExportSessionStatusCompleted) {
-            [SystemShareViewController sendEmailWithFilePath:@[exportSession.outputURL.path] viewController:self];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [SystemShareViewController sendEmailWithFilePath:@[exportSession.outputURL.path] viewController:self];
+            });
         } else {
             NSLog(@"%@", exportSession.error);
             [[[UIAlertView alloc] initWithTitle:@"Error" message:exportSession.error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
