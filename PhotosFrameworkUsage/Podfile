@@ -12,5 +12,7 @@ pod 'AFNetworking'
 pod 'IQKeyboardManager'
 pod 'FMDB'
 pod 'MBProgressHUD'
+pod 'MJExtension'
+pod 'MJRefresh'
 
 end

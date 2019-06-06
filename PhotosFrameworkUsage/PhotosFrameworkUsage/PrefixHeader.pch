@@ -9,10 +9,18 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+#import "TestBaseView.h"
 #import "MBProgressHUD.h"
 #import "BaseViewController.h"
 #import "FileUploadTool.h"
 #import "SystemShareViewController.h"
+#import "MJExtension.h"
+#import "MJRefresh.h"
+#import "HttpTool.h"
+#import "AFNetworking.h"
+#import "UIImage+fixOrientation.h"
+#import "MenuLabel.h"
+
 
 
 #define kScreenBounds [UIScreen mainScreen].bounds

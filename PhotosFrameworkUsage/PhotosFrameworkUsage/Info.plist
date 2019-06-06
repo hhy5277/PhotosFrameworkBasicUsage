@@ -2,8 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AccountKitClientToken</key>
+	<string>2158fd87d56ee78042ea9edd8a5177df</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>DemoTwo</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -16,10 +20,46 @@
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb367820503866911</string>
+				<string>ak367820503866911</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>FacebookAppID</key>
+	<string>367820503866911</string>
+	<key>FacebookDisplayName</key>
+	<string>PhotosFrameworkUsage</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-share-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Privacy - Camera Usage Description</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Privacy - Contacts Usage Description</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Privacy - Microphone Usage Description</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Privacy - Photo Library Additions Usage Description</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Privacy - Photo Library Usage Description</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -40,46 +80,6 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Privacy - Photo Library Additions Usage Description</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Privacy - Photo Library Usage Description</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Privacy - Microphone Usage Description</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Privacy - Camera Usage Description</string>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
-	<key>CFBundleDisplayName</key>
-	<string>DemoTwo</string>
-	<key>NSContactsUsageDescription</key>
-	<string>Privacy - Contacts Usage Description</string>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>fb367820503866911</string>
-				<string>ak367820503866911</string>
-			</array>
-		</dict>
-	</array>
-	<key>FacebookAppID</key>
-	<string>367820503866911</string>
-	<key>FacebookDisplayName</key>
-	<string>PhotosFrameworkUsage</string>
-	<key>AccountKitClientToken</key>
-	<string>2158fd87d56ee78042ea9edd8a5177df</string>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>fbapi</string>
-		<string>fb-messenger-share-api</string>
-		<string>fbauth2</string>
-		<string>fbshareextension</string>
 	</array>
 </dict>
 </plist>

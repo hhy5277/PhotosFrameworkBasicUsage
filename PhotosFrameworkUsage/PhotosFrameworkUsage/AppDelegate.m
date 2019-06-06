@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import "IQKeyboardManager.h"
+#import "QQBaseViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,9 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+//    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+//    self.window.backgroundColor = [UIColor whiteColor];
+//    [self.window makeKeyAndVisible];
     NSLog(@"%@", launchOptions);
     [[FBSDKApplicationDelegate sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
     
@@ -26,6 +30,8 @@
     keyboardManager.enableAutoToolbar = YES;
     keyboardManager.shouldShowToolbarPlaceholder = YES;
     keyboardManager.shouldResignOnTouchOutside = YES;
+    
+//    [QQBaseViewController qqAuthorizationController];
     
     return YES;
 }
