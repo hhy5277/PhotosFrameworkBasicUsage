@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SpeechRecognitionViewController">
+            <connections>
+                <outlet property="recordButton" destination="mag-Ab-idk" id="pUN-Up-dVH"/>
+                <outlet property="resultStringLabel" destination="Qx9-25-sWU" id="IIk-7X-pgy"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mag-Ab-idk">
+                    <rect key="frame" x="20" y="572" width="335" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="D1b-9F-q3W"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="recordButtonClicked" destination="-1" eventType="touchUpInside" id="oJE-LW-rku"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="识别结果：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRk-xU-0WO">
+                    <rect key="frame" x="20" y="40" width="335" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qx9-25-sWU">
+                    <rect key="frame" x="20" y="81" width="335" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="RLo-Db-bU0"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sc4-hm-9VM">
+                    <rect key="frame" x="20" y="507" width="335" height="45"/>
+                    <state key="normal" title="识别本地音频文件"/>
+                    <connections>
+                        <action selector="recognizeLocalAudioFile" destination="-1" eventType="touchUpInside" id="4L9-0Z-39p"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="mag-Ab-idk" secondAttribute="bottom" constant="50" id="5Bs-Xr-dCG"/>
+                <constraint firstItem="mag-Ab-idk" firstAttribute="trailing" secondItem="Sc4-hm-9VM" secondAttribute="trailing" id="7yd-pd-Jv5"/>
+                <constraint firstItem="mag-Ab-idk" firstAttribute="leading" secondItem="Sc4-hm-9VM" secondAttribute="leading" id="9nS-tc-sUD"/>
+                <constraint firstItem="mag-Ab-idk" firstAttribute="top" secondItem="Sc4-hm-9VM" secondAttribute="bottom" constant="20" id="Cci-JM-R6d"/>
+                <constraint firstItem="Qx9-25-sWU" firstAttribute="trailing" secondItem="rRk-xU-0WO" secondAttribute="trailing" id="IQF-Ag-CfY"/>
+                <constraint firstItem="rRk-xU-0WO" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="RfT-3U-tDn"/>
+                <constraint firstItem="mag-Ab-idk" firstAttribute="height" secondItem="Sc4-hm-9VM" secondAttribute="height" id="VAt-LH-ogm"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="mag-Ab-idk" secondAttribute="trailing" constant="20" id="VlY-lp-4nW"/>
+                <constraint firstItem="mag-Ab-idk" firstAttribute="width" secondItem="Sc4-hm-9VM" secondAttribute="width" id="XH8-bh-aZ3"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="rRk-xU-0WO" secondAttribute="trailing" constant="20" id="f2A-yp-jPs"/>
+                <constraint firstItem="mag-Ab-idk" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="mgD-nw-DBW"/>
+                <constraint firstItem="Qx9-25-sWU" firstAttribute="top" secondItem="rRk-xU-0WO" secondAttribute="bottom" constant="20" id="qZd-hN-u8m"/>
+                <constraint firstItem="Qx9-25-sWU" firstAttribute="leading" secondItem="rRk-xU-0WO" secondAttribute="leading" id="v7R-PO-pJD"/>
+                <constraint firstItem="rRk-xU-0WO" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="20" id="zB0-De-Bou"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="39.200000000000003" y="46.326836581709152"/>
+        </view>
+    </objects>
+</document>

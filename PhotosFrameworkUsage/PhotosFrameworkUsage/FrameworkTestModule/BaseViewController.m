@@ -9,7 +9,7 @@
 #import "BaseViewController.h"
 #import <MessageUI/MessageUI.h>
 
-@interface BaseViewController ()<MFMailComposeViewControllerDelegate>
+@interface BaseViewController ()
 
 @end
 
@@ -43,9 +43,25 @@
 }
 
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(nullable NSError *)error  {
-    NSLog(@"%d - %@", result,error);
-    
     [controller dismissViewControllerAnimated:YES completion:nil];
+    NSLog(@"%d - %@", result,error);
+}
+
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result {
+    [controller dismissViewControllerAnimated:YES completion:nil];
+    switch (result) {
+        case MessageComposeResultSent:
+            [BaseViewController hudWithTitle:@"信息传送成功"];
+            break;
+        case MessageComposeResultFailed:
+            [BaseViewController hudWithTitle:@"信息传送失败"];
+            break;
+        case MessageComposeResultCancelled:
+            [BaseViewController hudWithTitle:@"信息被用户取消发送"];
+            break;
+        default:
+            break;
+    }
 }
 
 @end

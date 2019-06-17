@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A20C2A6922ADF79D00F57347 /* 录音.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A20C2A6822ADF79D00F57347 /* 录音.m4a */; };
 		A23123B522A7C9FB00C2559C /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A231237E22A7C9FB00C2559C /* AlbumViewController.m */; };
 		A23123B622A7C9FB00C2559C /* AlbumViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A231237F22A7C9FB00C2559C /* AlbumViewController.xib */; };
 		A23123B722A7C9FB00C2559C /* AudioListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A231238122A7C9FB00C2559C /* AudioListViewController.m */; };
@@ -52,9 +53,13 @@
 		A238B0BE22A11FAE001D143C /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A238B0BD22A11FAE001D143C /* MessageUI.framework */; };
 		A238D94422A90E7F002F3641 /* MenuLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A238D94322A90E7F002F3641 /* MenuLabel.m */; };
 		A238D94722A90F23002F3641 /* TestBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = A238D94622A90F23002F3641 /* TestBaseView.m */; };
+		A238D94B22A92173002F3641 /* SpeechRecognitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A238D94922A92173002F3641 /* SpeechRecognitionViewController.m */; };
+		A238D94C22A92173002F3641 /* SpeechRecognitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A238D94A22A92173002F3641 /* SpeechRecognitionViewController.xib */; };
+		A238D94E22A9220B002F3641 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A238D94D22A9220B002F3641 /* Speech.framework */; };
 		A2414F0122A4B579006A61CA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2414F0022A4B579006A61CA /* CoreGraphics.framework */; };
 		A24A8DF8229F7328005306E9 /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A24A8DF7229F7328005306E9 /* Contacts.framework */; };
 		A24A8DFA229F7377005306E9 /* ContactsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A24A8DF9229F7377005306E9 /* ContactsUI.framework */; };
+		A270D7AF22AE3D9A009B61AC /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = A270D7AE22AE3D9A009B61AC /* NSString+Base64.m */; };
 		A279F727229CCB9B003FAC27 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A279F726229CCB9B003FAC27 /* AppDelegate.m */; };
 		A279F72D229CCB9B003FAC27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A279F72B229CCB9B003FAC27 /* Main.storyboard */; };
 		A279F72F229CCB9D003FAC27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A279F72E229CCB9D003FAC27 /* Assets.xcassets */; };
@@ -87,6 +92,7 @@
 /* Begin PBXFileReference section */
 		7B3F4E2AE4392DAA3D2980A2 /* Pods-PhotosFrameworkUsage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosFrameworkUsage.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhotosFrameworkUsage/Pods-PhotosFrameworkUsage.release.xcconfig"; sourceTree = "<group>"; };
 		7F45DA5A71F4E24256E35FD9 /* libPods-PhotosFrameworkUsage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PhotosFrameworkUsage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A20C2A6822ADF79D00F57347 /* 录音.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "录音.m4a"; sourceTree = "<group>"; };
 		A231237D22A7C9FB00C2559C /* AlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumViewController.h; sourceTree = "<group>"; };
 		A231237E22A7C9FB00C2559C /* AlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumViewController.m; sourceTree = "<group>"; };
 		A231237F22A7C9FB00C2559C /* AlbumViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlbumViewController.xib; sourceTree = "<group>"; };
@@ -158,9 +164,15 @@
 		A238D94322A90E7F002F3641 /* MenuLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuLabel.m; sourceTree = "<group>"; };
 		A238D94522A90F23002F3641 /* TestBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestBaseView.h; sourceTree = "<group>"; };
 		A238D94622A90F23002F3641 /* TestBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestBaseView.m; sourceTree = "<group>"; };
+		A238D94822A92173002F3641 /* SpeechRecognitionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpeechRecognitionViewController.h; sourceTree = "<group>"; };
+		A238D94922A92173002F3641 /* SpeechRecognitionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpeechRecognitionViewController.m; sourceTree = "<group>"; };
+		A238D94A22A92173002F3641 /* SpeechRecognitionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeechRecognitionViewController.xib; sourceTree = "<group>"; };
+		A238D94D22A9220B002F3641 /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
 		A2414F0022A4B579006A61CA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A24A8DF7229F7328005306E9 /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
 		A24A8DF9229F7377005306E9 /* ContactsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ContactsUI.framework; path = System/Library/Frameworks/ContactsUI.framework; sourceTree = SDKROOT; };
+		A270D7AD22AE3D9A009B61AC /* NSString+Base64.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
+		A270D7AE22AE3D9A009B61AC /* NSString+Base64.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
 		A279F722229CCB9B003FAC27 /* PhotosFrameworkUsage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotosFrameworkUsage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A279F725229CCB9B003FAC27 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A279F726229CCB9B003FAC27 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -211,6 +223,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A238D94E22A9220B002F3641 /* Speech.framework in Frameworks */,
 				A2BCFA3722A8EAD3004AD109 /* CoreImage.framework in Frameworks */,
 				A2F4BD6F22A8C611001978E5 /* CoreTelephony.framework in Frameworks */,
 				A2FEE00122A51AB40009B52B /* JavaScriptCore.framework in Frameworks */,
@@ -233,6 +246,7 @@
 		5E556BCC37BE0110E900E540 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A238D94D22A9220B002F3641 /* Speech.framework */,
 				A2BCFA3622A8EAD3004AD109 /* CoreImage.framework */,
 				A2F4BD6E22A8C611001978E5 /* CoreTelephony.framework */,
 				A2FEE00022A51AB40009B52B /* JavaScriptCore.framework */,
@@ -254,6 +268,14 @@
 				7B3F4E2AE4392DAA3D2980A2 /* Pods-PhotosFrameworkUsage.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		A20C2A6722ADF79D00F57347 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				A20C2A6822ADF79D00F57347 /* 录音.m4a */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		A231236C22A7C98C00C2559C /* QQModule */ = {
@@ -464,6 +486,11 @@
 				A238D94322A90E7F002F3641 /* MenuLabel.m */,
 				A238D94522A90F23002F3641 /* TestBaseView.h */,
 				A238D94622A90F23002F3641 /* TestBaseView.m */,
+				A238D94822A92173002F3641 /* SpeechRecognitionViewController.h */,
+				A238D94922A92173002F3641 /* SpeechRecognitionViewController.m */,
+				A238D94A22A92173002F3641 /* SpeechRecognitionViewController.xib */,
+				A270D7AD22AE3D9A009B61AC /* NSString+Base64.h */,
+				A270D7AE22AE3D9A009B61AC /* NSString+Base64.m */,
 			);
 			path = FrameworkTestModule;
 			sourceTree = "<group>";
@@ -489,6 +516,7 @@
 		A279F724229CCB9B003FAC27 /* PhotosFrameworkUsage */ = {
 			isa = PBXGroup;
 			children = (
+				A20C2A6722ADF79D00F57347 /* Resource */,
 				A231237C22A7C9FB00C2559C /* FrameworkTestModule */,
 				A231236C22A7C98C00C2559C /* QQModule */,
 				A2C83461229FB0DD005DB6DF /* Frameworks */,
@@ -598,10 +626,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A20C2A6922ADF79D00F57347 /* 录音.m4a in Resources */,
 				A23123B822A7C9FB00C2559C /* AudioListViewController.xib in Resources */,
 				A23123BE22A7C9FB00C2559C /* ContactsViewController.xib in Resources */,
 				A23123D722A7C9FB00C2559C /* UrlTestListViewController.xib in Resources */,
 				A23123D022A7C9FB00C2559C /* QrCodeGeneratorViewController.xib in Resources */,
+				A238D94C22A92173002F3641 /* SpeechRecognitionViewController.xib in Resources */,
 				A23123C522A7C9FB00C2559C /* OCAndJSViewController.xib in Resources */,
 				A23123C922A7C9FB00C2559C /* PhotoBrowserViewController.xib in Resources */,
 				A2BCFA3522A8E728004AD109 /* FaceAnalyzeViewController.xib in Resources */,
@@ -686,12 +716,14 @@
 				A279F74E229CCC0C003FAC27 /* LZImageBrowserModel.m in Sources */,
 				A23123F222A7CB8900C2559C /* QQLoginViewController.m in Sources */,
 				A23123B722A7C9FB00C2559C /* AudioListViewController.m in Sources */,
+				A270D7AF22AE3D9A009B61AC /* NSString+Base64.m in Sources */,
 				A2BCFA3A22A8F4B9004AD109 /* UIImage+fixOrientation.m in Sources */,
 				A23123C822A7C9FB00C2559C /* PhotoBrowserViewController.m in Sources */,
 				A23123D322A7C9FB00C2559C /* QRScanView.m in Sources */,
 				A238D94722A90F23002F3641 /* TestBaseView.m in Sources */,
 				A23123C022A7C9FB00C2559C /* HttpTool.m in Sources */,
 				A279F74B229CCC0C003FAC27 /* LZImageBrowserForceTouchViewController.m in Sources */,
+				A238D94B22A92173002F3641 /* SpeechRecognitionViewController.m in Sources */,
 				A279F74D229CCC0C003FAC27 /* LZImageBrowserManger.m in Sources */,
 				A279F74F229CCC0C003FAC27 /* LZImageBrowserSubView.m in Sources */,
 				A23123ED22A7CB7900C2559C /* QQBaseViewController.m in Sources */,

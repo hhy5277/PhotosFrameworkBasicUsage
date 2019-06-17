@@ -20,7 +20,7 @@
 #import "AFNetworking.h"
 #import "UIImage+fixOrientation.h"
 #import "MenuLabel.h"
-
+#import "NSString+Base64.h"
 
 
 #define kScreenBounds [UIScreen mainScreen].bounds

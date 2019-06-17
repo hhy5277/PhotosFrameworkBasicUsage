@@ -19,6 +19,9 @@
     [super viewDidLoad];
     
     NSLog(@"ViewController - viewDidLoad");
+    
+    // 获取系统所有本地化标识符数组列表
+//    NSLog(@"%@", [NSLocale availableLocaleIdentifiers]);
 }
 
 - (void)dealloc {

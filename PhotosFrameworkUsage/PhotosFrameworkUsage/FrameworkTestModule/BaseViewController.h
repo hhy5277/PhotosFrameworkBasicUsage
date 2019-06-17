@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BaseViewController : UIViewController
+@interface BaseViewController : UIViewController <MFMessageComposeViewControllerDelegate,MFMailComposeViewControllerDelegate>
 + (void)alertWithTitle:(NSString *)title;
 + (void)alertWithMessage:(NSString *)message;
 + (void)alertWithTitle:(NSString *)title message:(NSString *)message;

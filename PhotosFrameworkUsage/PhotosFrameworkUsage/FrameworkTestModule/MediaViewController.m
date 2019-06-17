@@ -22,6 +22,7 @@
 #import "UrlTestListViewController.h"
 #import "FaceAnalyzeViewController.h"
 #import "BaseTableViewCell.h"
+#import "SpeechRecognitionViewController.h"
 
 #define kVideoMaximumDuration 30
 
@@ -48,6 +49,8 @@
 #define kOCAndJSExecute @"OC与JS交互"
 #define kHttpUrlTest @"Url列表测试"
 #define kFaceAnalyse @"人脸识别"
+#define kSpeechRecognition @"iOS原生语音识别"
+#define kSendShortMessage @"发送短信"
 
 @interface MediaViewController () <UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -59,7 +62,7 @@
 
 - (NSArray *)listArray {
     if (!_listArray) {
-        _listArray = @[kFaceAnalyse,kHttpUrlTest,kOCAndJSExecute,kAuthenticationPass,kContactsFrameworkUsage,kRecordVideoUseImagePickerController,kPlayVideoWithAVPlayerViewController,kVideoSaveToAlbum,kGetMediaInfoWithAVAsset,kConvertWithAVAssetExportSession,kCompressWithAVAssetExportSession,kVideoFrameWithAVAssetImageGenerator,kUploadVideoToServer,kSelectVideoOfPhotoLibrary,kPhotosFrameworkUsage,kToOtherLoginVc,kAVPlayerLayerUsage,kSystemOriginSharedVc,kQrCodeReader,kQrCodeGenerator, kAudioHandle,kSendEmail];
+        _listArray = @[kSendShortMessage,kSpeechRecognition,kFaceAnalyse,kHttpUrlTest,kOCAndJSExecute,kAuthenticationPass,kContactsFrameworkUsage,kRecordVideoUseImagePickerController,kPlayVideoWithAVPlayerViewController,kVideoSaveToAlbum,kGetMediaInfoWithAVAsset,kConvertWithAVAssetExportSession,kCompressWithAVAssetExportSession,kVideoFrameWithAVAssetImageGenerator,kUploadVideoToServer,kSelectVideoOfPhotoLibrary,kPhotosFrameworkUsage,kToOtherLoginVc,kAVPlayerLayerUsage,kSystemOriginSharedVc,kQrCodeReader,kQrCodeGenerator, kAudioHandle,kSendEmail];
     }
     return _listArray;
 }
@@ -111,7 +114,27 @@
         [self httpUrlTestList];
     } else if ([text isEqualToString:kFaceAnalyse]) {
         [self faceAnalyze];
+    } else if ([text isEqualToString:kSpeechRecognition]) {
+        [self speechRecognition];
+    } else if ([text isEqualToString:kSendShortMessage]) {
+        [self sendShortMsg];
     }
+    
+}
+
+#pragma mark - 发送短信
+- (void)sendShortMsg {
+    [SystemShareViewController sendShortMessageWithPhoneNumber:@"10086" text:@"你好！！aaa！" viewController:self];
+    
+//    NSString *phoneStr = @"10086";
+//    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"sms://%@", phoneStr]];
+//    [[UIApplication sharedApplication] openURL:url];
+}
+
+#pragma mark - 语音识别
+- (void)speechRecognition {
+    SpeechRecognitionViewController *speechRecognitionVc = [[SpeechRecognitionViewController alloc] init];
+    [self.navigationController pushViewController:speechRecognitionVc animated:YES];
 }
 
 #pragma mark - 人脸识别

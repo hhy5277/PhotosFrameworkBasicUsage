@@ -16,9 +16,21 @@
 
 @implementation SystemShareViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
++ (void)sendShortMessageWithPhoneNumber:(NSString *)phoneNumber text:(NSString *)text viewController:(BaseViewController *)viewController {
+    if ([MFMessageComposeViewController canSendText]) {
+        MFMessageComposeViewController *controller = [[MFMessageComposeViewController alloc] init];
+        // 发送短信的号码，数组形式入参
+        controller.recipients = @[phoneNumber];
+        controller.navigationBar.tintColor = [UIColor redColor];
+        // 此处的body就是短信将要发生的内容
+        controller.body = text;
+        controller.messageComposeDelegate = viewController;
+        [viewController presentViewController:controller animated:YES completion:nil];
+        // 修改短信界面标题
+        [[[[controller viewControllers] lastObject] navigationItem] setTitle:@"title"];
+    } else {
+        [BaseViewController hudWithTitle:@"该设备不支持短信功能"];
+    }
 }
 
 + (void)authenticationPass {
