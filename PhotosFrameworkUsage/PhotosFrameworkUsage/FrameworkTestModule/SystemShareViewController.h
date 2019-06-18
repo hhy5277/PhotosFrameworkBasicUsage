@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)sendEmailWithFilePath:(NSArray *)filePaths viewController:(UIViewController *)viewController;
 + (void)authenticationPass;
 + (void)sendShortMessageWithPhoneNumber:(NSString *)phoneNumber text:(NSString *)text viewController:(BaseViewController *)viewController;
++ (void)keychainSave;
++ (void)keychainGet;
 @end
 
 NS_ASSUME_NONNULL_END

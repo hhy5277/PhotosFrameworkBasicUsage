@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "MediaViewController.h"
+#import <MSNumberScrollAnimatedView.h>
 
 @interface ViewController ()
 - (IBAction)toContentOnClick;

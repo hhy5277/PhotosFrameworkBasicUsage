@@ -9,12 +9,53 @@
 #import "SystemShareViewController.h"
 #import <MessageUI/MessageUI.h>
 #import <LocalAuthentication/LocalAuthentication.h>
+#import <Security/Security.h>
 
 @interface SystemShareViewController ()
 
 @end
 
 @implementation SystemShareViewController
+
++ (void)keychainSave {
+    NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
+    [dictionary setObject:(id)kSecClassGenericPassword forKey:(id)kSecClass];
+    NSString *itemIDString = @"password";
+    NSData *itemID = [itemIDString dataUsingEncoding:NSUTF8StringEncoding];
+    [dictionary setObject:itemID forKey:(id)kSecAttrGeneric];
+    
+    NSString *account = @"account";
+    NSString *service = @"service";
+    [dictionary setObject:account forKey:(id)kSecAttrAccount];
+    [dictionary setObject:service forKey:(id)kSecAttrService];
+    
+    NSString *password = @"123456";
+    NSData *itemData = [password dataUsingEncoding:NSUTF8StringEncoding];
+    [dictionary setObject:itemData forKey:(id)kSecValueData];
+    
+    OSStatus status = SecItemAdd((CFDictionaryRef)dictionary, NULL);
+    NSLog(@"%d", status);
+}
+
++ (void)keychainGet {
+    NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
+    [dictionary setObject:(id)kSecClassGenericPassword forKey:(id)kSecClass];
+    
+    NSString *itemIDString = @"password";
+    NSData *itemID = [itemIDString dataUsingEncoding:NSUTF8StringEncoding];
+    [dictionary setObject:itemID forKey:(id)kSecAttrGeneric];
+    
+    NSString *account = @"account";
+    NSString *service = @"service";
+    [dictionary setObject:account forKey:(id)kSecAttrAccount];
+    [dictionary setObject:service forKey:(id)kSecAttrService];
+    
+    [dictionary setObject:(id)kSecMatchLimitOne forKey:(id)kSecMatchLimit];
+    
+    [dictionary setObject:(id)kCFBooleanTrue forKey:(id)kSecReturnData];
+    
+    
+}
 
 + (void)sendShortMessageWithPhoneNumber:(NSString *)phoneNumber text:(NSString *)text viewController:(BaseViewController *)viewController {
     if ([MFMessageComposeViewController canSendText]) {

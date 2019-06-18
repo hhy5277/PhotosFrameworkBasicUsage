@@ -1,0 +1,1 @@
+../../../../PDBotKit/PDBotLib.framework/Headers/PDMessageContentImage.h

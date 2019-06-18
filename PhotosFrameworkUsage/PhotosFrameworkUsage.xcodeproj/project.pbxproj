@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A20C2A6922ADF79D00F57347 /* 录音.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A20C2A6822ADF79D00F57347 /* 录音.m4a */; };
+		A21AADD122B8DA4E00E5B902 /* ZLNumberScrollAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = A21AADD022B8DA4E00E5B902 /* ZLNumberScrollAnimationView.m */; };
 		A23123B522A7C9FB00C2559C /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A231237E22A7C9FB00C2559C /* AlbumViewController.m */; };
 		A23123B622A7C9FB00C2559C /* AlbumViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A231237F22A7C9FB00C2559C /* AlbumViewController.xib */; };
 		A23123B722A7C9FB00C2559C /* AudioListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A231238122A7C9FB00C2559C /* AudioListViewController.m */; };
@@ -57,6 +58,8 @@
 		A238D94C22A92173002F3641 /* SpeechRecognitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A238D94A22A92173002F3641 /* SpeechRecognitionViewController.xib */; };
 		A238D94E22A9220B002F3641 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A238D94D22A9220B002F3641 /* Speech.framework */; };
 		A2414F0122A4B579006A61CA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2414F0022A4B579006A61CA /* CoreGraphics.framework */; };
+		A247DE9022B8CD770086FB0C /* NumberScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A247DE8E22B8CD770086FB0C /* NumberScrollViewController.m */; };
+		A247DE9122B8CD770086FB0C /* NumberScrollViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A247DE8F22B8CD770086FB0C /* NumberScrollViewController.xib */; };
 		A24A8DF8229F7328005306E9 /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A24A8DF7229F7328005306E9 /* Contacts.framework */; };
 		A24A8DFA229F7377005306E9 /* ContactsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A24A8DF9229F7377005306E9 /* ContactsUI.framework */; };
 		A270D7AF22AE3D9A009B61AC /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = A270D7AE22AE3D9A009B61AC /* NSString+Base64.m */; };
@@ -75,6 +78,8 @@
 		A279F76C229CCC36003FAC27 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A279F76A229CCC36003FAC27 /* ViewController.m */; };
 		A27E59ED22A907EB00DF379E /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A27E59EB22A907EB00DF379E /* BaseTableViewCell.m */; };
 		A27E59EE22A907EB00DF379E /* BaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A27E59EC22A907EB00DF379E /* BaseTableViewCell.xib */; };
+		A29F0BE922B781520076B108 /* SIMInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A29F0BE722B781520076B108 /* SIMInfoViewController.m */; };
+		A29F0BEA22B781520076B108 /* SIMInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A29F0BE822B781520076B108 /* SIMInfoViewController.xib */; };
 		A2BCFA3422A8E728004AD109 /* FaceAnalyzeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2BCFA3222A8E728004AD109 /* FaceAnalyzeViewController.m */; };
 		A2BCFA3522A8E728004AD109 /* FaceAnalyzeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2BCFA3322A8E728004AD109 /* FaceAnalyzeViewController.xib */; };
 		A2BCFA3722A8EAD3004AD109 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2BCFA3622A8EAD3004AD109 /* CoreImage.framework */; };
@@ -82,6 +87,10 @@
 		A2C83464229FB4D6005DB6DF /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C83462229FB4D6005DB6DF /* FBSDKCoreKit.framework */; };
 		A2C83465229FB4D6005DB6DF /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C83463229FB4D6005DB6DF /* FBSDKLoginKit.framework */; };
 		A2C83467229FBB6A005DB6DF /* AccountKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C83466229FBB6A005DB6DF /* AccountKit.framework */; };
+		A2CD6EC522B79099001E741C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2CD6EC422B79099001E741C /* Security.framework */; };
+		A2CD6EC922B7A492001E741C /* HealthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2CD6EC722B7A492001E741C /* HealthViewController.m */; };
+		A2CD6ECA22B7A492001E741C /* HealthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2CD6EC822B7A492001E741C /* HealthViewController.xib */; };
+		A2DC1C7322B8CB9600C2CD22 /* UILabel+JumpNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = A2DC1C7222B8CB9600C2CD22 /* UILabel+JumpNumber.m */; };
 		A2E5F0F522A0C27000876A89 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E5F0F422A0C27000876A89 /* AVFoundation.framework */; };
 		A2F4BD6F22A8C611001978E5 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F4BD6E22A8C611001978E5 /* CoreTelephony.framework */; };
 		A2FEDFFF22A50C540009B52B /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2FEDFFE22A50C540009B52B /* LocalAuthentication.framework */; };
@@ -93,6 +102,8 @@
 		7B3F4E2AE4392DAA3D2980A2 /* Pods-PhotosFrameworkUsage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosFrameworkUsage.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhotosFrameworkUsage/Pods-PhotosFrameworkUsage.release.xcconfig"; sourceTree = "<group>"; };
 		7F45DA5A71F4E24256E35FD9 /* libPods-PhotosFrameworkUsage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PhotosFrameworkUsage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A20C2A6822ADF79D00F57347 /* 录音.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "录音.m4a"; sourceTree = "<group>"; };
+		A21AADCF22B8DA4E00E5B902 /* ZLNumberScrollAnimationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZLNumberScrollAnimationView.h; sourceTree = "<group>"; };
+		A21AADD022B8DA4E00E5B902 /* ZLNumberScrollAnimationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZLNumberScrollAnimationView.m; sourceTree = "<group>"; };
 		A231237D22A7C9FB00C2559C /* AlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumViewController.h; sourceTree = "<group>"; };
 		A231237E22A7C9FB00C2559C /* AlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumViewController.m; sourceTree = "<group>"; };
 		A231237F22A7C9FB00C2559C /* AlbumViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlbumViewController.xib; sourceTree = "<group>"; };
@@ -169,6 +180,9 @@
 		A238D94A22A92173002F3641 /* SpeechRecognitionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeechRecognitionViewController.xib; sourceTree = "<group>"; };
 		A238D94D22A9220B002F3641 /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
 		A2414F0022A4B579006A61CA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A247DE8D22B8CD770086FB0C /* NumberScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NumberScrollViewController.h; sourceTree = "<group>"; };
+		A247DE8E22B8CD770086FB0C /* NumberScrollViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NumberScrollViewController.m; sourceTree = "<group>"; };
+		A247DE8F22B8CD770086FB0C /* NumberScrollViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberScrollViewController.xib; sourceTree = "<group>"; };
 		A24A8DF7229F7328005306E9 /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
 		A24A8DF9229F7377005306E9 /* ContactsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ContactsUI.framework; path = System/Library/Frameworks/ContactsUI.framework; sourceTree = SDKROOT; };
 		A270D7AD22AE3D9A009B61AC /* NSString+Base64.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
@@ -201,6 +215,9 @@
 		A27E59EA22A907EB00DF379E /* BaseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
 		A27E59EB22A907EB00DF379E /* BaseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
 		A27E59EC22A907EB00DF379E /* BaseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseTableViewCell.xib; sourceTree = "<group>"; };
+		A29F0BE622B781520076B108 /* SIMInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SIMInfoViewController.h; sourceTree = "<group>"; };
+		A29F0BE722B781520076B108 /* SIMInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SIMInfoViewController.m; sourceTree = "<group>"; };
+		A29F0BE822B781520076B108 /* SIMInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SIMInfoViewController.xib; sourceTree = "<group>"; };
 		A2BCFA3122A8E728004AD109 /* FaceAnalyzeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FaceAnalyzeViewController.h; sourceTree = "<group>"; };
 		A2BCFA3222A8E728004AD109 /* FaceAnalyzeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FaceAnalyzeViewController.m; sourceTree = "<group>"; };
 		A2BCFA3322A8E728004AD109 /* FaceAnalyzeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FaceAnalyzeViewController.xib; sourceTree = "<group>"; };
@@ -210,6 +227,13 @@
 		A2C83462229FB4D6005DB6DF /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		A2C83463229FB4D6005DB6DF /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		A2C83466229FBB6A005DB6DF /* AccountKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AccountKit.framework; sourceTree = "<group>"; };
+		A2CD6EC422B79099001E741C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		A2CD6EC622B7A492001E741C /* HealthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HealthViewController.h; sourceTree = "<group>"; };
+		A2CD6EC722B7A492001E741C /* HealthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HealthViewController.m; sourceTree = "<group>"; };
+		A2CD6EC822B7A492001E741C /* HealthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HealthViewController.xib; sourceTree = "<group>"; };
+		A2CD6ECB22B7A49D001E741C /* PhotosFrameworkUsage.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PhotosFrameworkUsage.entitlements; sourceTree = "<group>"; };
+		A2DC1C7122B8CB9600C2CD22 /* UILabel+JumpNumber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+JumpNumber.h"; sourceTree = "<group>"; };
+		A2DC1C7222B8CB9600C2CD22 /* UILabel+JumpNumber.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+JumpNumber.m"; sourceTree = "<group>"; };
 		A2E5F0F422A0C27000876A89 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A2E5F0F722A0CAAC00876A89 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		A2F4BD6E22A8C611001978E5 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -223,6 +247,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2CD6EC522B79099001E741C /* Security.framework in Frameworks */,
 				A238D94E22A9220B002F3641 /* Speech.framework in Frameworks */,
 				A2BCFA3722A8EAD3004AD109 /* CoreImage.framework in Frameworks */,
 				A2F4BD6F22A8C611001978E5 /* CoreTelephony.framework in Frameworks */,
@@ -246,6 +271,7 @@
 		5E556BCC37BE0110E900E540 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A2CD6EC422B79099001E741C /* Security.framework */,
 				A238D94D22A9220B002F3641 /* Speech.framework */,
 				A2BCFA3622A8EAD3004AD109 /* CoreImage.framework */,
 				A2F4BD6E22A8C611001978E5 /* CoreTelephony.framework */,
@@ -491,6 +517,19 @@
 				A238D94A22A92173002F3641 /* SpeechRecognitionViewController.xib */,
 				A270D7AD22AE3D9A009B61AC /* NSString+Base64.h */,
 				A270D7AE22AE3D9A009B61AC /* NSString+Base64.m */,
+				A29F0BE622B781520076B108 /* SIMInfoViewController.h */,
+				A29F0BE722B781520076B108 /* SIMInfoViewController.m */,
+				A29F0BE822B781520076B108 /* SIMInfoViewController.xib */,
+				A2CD6EC622B7A492001E741C /* HealthViewController.h */,
+				A2CD6EC722B7A492001E741C /* HealthViewController.m */,
+				A2CD6EC822B7A492001E741C /* HealthViewController.xib */,
+				A2DC1C7122B8CB9600C2CD22 /* UILabel+JumpNumber.h */,
+				A2DC1C7222B8CB9600C2CD22 /* UILabel+JumpNumber.m */,
+				A247DE8D22B8CD770086FB0C /* NumberScrollViewController.h */,
+				A247DE8E22B8CD770086FB0C /* NumberScrollViewController.m */,
+				A247DE8F22B8CD770086FB0C /* NumberScrollViewController.xib */,
+				A21AADCF22B8DA4E00E5B902 /* ZLNumberScrollAnimationView.h */,
+				A21AADD022B8DA4E00E5B902 /* ZLNumberScrollAnimationView.m */,
 			);
 			path = FrameworkTestModule;
 			sourceTree = "<group>";
@@ -516,6 +555,7 @@
 		A279F724229CCB9B003FAC27 /* PhotosFrameworkUsage */ = {
 			isa = PBXGroup;
 			children = (
+				A2CD6ECB22B7A49D001E741C /* PhotosFrameworkUsage.entitlements */,
 				A20C2A6722ADF79D00F57347 /* Resource */,
 				A231237C22A7C9FB00C2559C /* FrameworkTestModule */,
 				A231236C22A7C98C00C2559C /* QQModule */,
@@ -600,6 +640,11 @@
 				TargetAttributes = {
 					A279F721229CCB9B003FAC27 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -632,6 +677,7 @@
 				A23123D722A7C9FB00C2559C /* UrlTestListViewController.xib in Resources */,
 				A23123D022A7C9FB00C2559C /* QrCodeGeneratorViewController.xib in Resources */,
 				A238D94C22A92173002F3641 /* SpeechRecognitionViewController.xib in Resources */,
+				A247DE9122B8CD770086FB0C /* NumberScrollViewController.xib in Resources */,
 				A23123C522A7C9FB00C2559C /* OCAndJSViewController.xib in Resources */,
 				A23123C922A7C9FB00C2559C /* PhotoBrowserViewController.xib in Resources */,
 				A2BCFA3522A8E728004AD109 /* FaceAnalyzeViewController.xib in Resources */,
@@ -640,6 +686,7 @@
 				A279F732229CCB9D003FAC27 /* LaunchScreen.storyboard in Resources */,
 				A23123EE22A7CB7900C2559C /* QQBaseViewController.xib in Resources */,
 				A279F72F229CCB9D003FAC27 /* Assets.xcassets in Resources */,
+				A2CD6ECA22B7A492001E741C /* HealthViewController.xib in Resources */,
 				A23123C722A7C9FB00C2559C /* OtherLoginViewController.xib in Resources */,
 				A27E59EE22A907EB00DF379E /* BaseTableViewCell.xib in Resources */,
 				A23123D222A7C9FB00C2559C /* QrCodeReaderViewController.xib in Resources */,
@@ -648,6 +695,7 @@
 				A23123C322A7C9FB00C2559C /* OCAndJS.html in Resources */,
 				A23123CC22A7C9FB00C2559C /* PhotosViewController.xib in Resources */,
 				A23123D522A7C9FB00C2559C /* SystemShareViewController.xib in Resources */,
+				A29F0BEA22B781520076B108 /* SIMInfoViewController.xib in Resources */,
 				A23123F322A7CB8900C2559C /* QQLoginViewController.xib in Resources */,
 				A23123BC22A7C9FB00C2559C /* BaseViewController.xib in Resources */,
 				A279F72D229CCB9B003FAC27 /* Main.storyboard in Resources */,
@@ -690,6 +738,9 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-PhotosFrameworkUsage/Pods-PhotosFrameworkUsage-resources.sh",
 				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/PDBotKit/PDBotKit.bundle",
+				"${PODS_ROOT}/PDBotKit/zh-Hans.lproj",
+				"${PODS_ROOT}/PDBotKit/en.lproj",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
@@ -697,6 +748,9 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/PDBotKit.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh-Hans.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.lproj",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -726,21 +780,26 @@
 				A238D94B22A92173002F3641 /* SpeechRecognitionViewController.m in Sources */,
 				A279F74D229CCC0C003FAC27 /* LZImageBrowserManger.m in Sources */,
 				A279F74F229CCC0C003FAC27 /* LZImageBrowserSubView.m in Sources */,
+				A247DE9022B8CD770086FB0C /* NumberScrollViewController.m in Sources */,
 				A23123ED22A7CB7900C2559C /* QQBaseViewController.m in Sources */,
 				A23123BB22A7C9FB00C2559C /* BaseViewController.m in Sources */,
 				A23123C622A7C9FB00C2559C /* OtherLoginViewController.m in Sources */,
 				A2BCFA3422A8E728004AD109 /* FaceAnalyzeViewController.m in Sources */,
 				A279F735229CCB9D003FAC27 /* main.m in Sources */,
+				A2DC1C7322B8CB9600C2CD22 /* UILabel+JumpNumber.m in Sources */,
 				A23123D622A7C9FB00C2559C /* UrlTestListViewController.m in Sources */,
 				A23123C422A7C9FB00C2559C /* OCAndJSViewController.m in Sources */,
 				A23123BD22A7C9FB00C2559C /* ContactsViewController.m in Sources */,
 				A279F750229CCC0C003FAC27 /* LZImageBrowserTranslation.m in Sources */,
 				A23123B922A7C9FB00C2559C /* AudioRecorderViewController.m in Sources */,
 				A238D94422A90E7F002F3641 /* MenuLabel.m in Sources */,
+				A2CD6EC922B7A492001E741C /* HealthViewController.m in Sources */,
 				A279F76C229CCC36003FAC27 /* ViewController.m in Sources */,
 				A23123CD22A7C9FB00C2559C /* PlayerLayerViewController.m in Sources */,
 				A23123CA22A7C9FB00C2559C /* PhotoCollectionViewCell.m in Sources */,
+				A29F0BE922B781520076B108 /* SIMInfoViewController.m in Sources */,
 				A23123CB22A7C9FB00C2559C /* PhotosViewController.m in Sources */,
+				A21AADD122B8DA4E00E5B902 /* ZLNumberScrollAnimationView.m in Sources */,
 				A279F751229CCC0C003FAC27 /* LZImageBrowserViewController.m in Sources */,
 				A27E59ED22A907EB00DF379E /* BaseTableViewCell.m in Sources */,
 				A23123C122A7C9FB00C2559C /* MediaViewController.m in Sources */,

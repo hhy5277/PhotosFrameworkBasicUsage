@@ -21,6 +21,8 @@ PODS:
   - MBProgressHUD (1.1.0)
   - MJExtension (3.0.17)
   - MJRefresh (3.2.0)
+  - MSNumberScrollAnimatedView (0.0.2)
+  - PDBotKit (2.5.1)
   - SDWebImage (5.0.0):
     - SDWebImage/Core (= 5.0.0)
   - SDWebImage/Core (5.0.0)
@@ -32,6 +34,8 @@ DEPENDENCIES:
   - MBProgressHUD
   - MJExtension
   - MJRefresh
+  - MSNumberScrollAnimatedView
+  - PDBotKit
   - SDWebImage
 
 SPEC REPOS:
@@ -42,6 +46,8 @@ SPEC REPOS:
     - MBProgressHUD
     - MJExtension
     - MJRefresh
+    - MSNumberScrollAnimatedView
+    - PDBotKit
     - SDWebImage
 
 SPEC CHECKSUMS:
@@ -51,8 +57,10 @@ SPEC CHECKSUMS:
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MJExtension: 74ec83124a68891619fb7ba9c5c811bbf1691076
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
+  MSNumberScrollAnimatedView: 28c0cb5d10cb0b93b4b9aa421455c22157ac0ed5
+  PDBotKit: c07382dc1f66464c73096d3c04621024c25b8749
   SDWebImage: 5de80a0302de9e377e62f47d2fa1304efff0e55f
 
-PODFILE CHECKSUM: 3e0bbc1d44ea73016be590423a76a9774fb492b6
+PODFILE CHECKSUM: 53d8de6b9f34a37c45f7b66b37b86158445d7ae7
 
 COCOAPODS: 1.5.3

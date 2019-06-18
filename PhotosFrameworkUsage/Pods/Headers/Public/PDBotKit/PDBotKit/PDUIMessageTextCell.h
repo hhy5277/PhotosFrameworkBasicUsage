@@ -1,0 +1,1 @@
+../../../../PDBotKit/PDBotKit.framework/Headers/PDUIMessageTextCell.h

@@ -1,0 +1,43 @@
+/* 
+  PDBotKit.strings
+  PDBotKit
+
+  Created by wuyifan on 2018/1/5.
+  Copyright © 2018年 4Paradigm. All rights reserved.
+*/
+
+"OK" = "Ok";
+"Cancel" = "Cancel";
+"Back" = "Back";
+"More" = "More";
+"Photo" = "Photos";
+"Camera" = "Camera";
+"File" = "File";
+"Human" = "Human";
+"Message" = "Message";
+"Evaluate" = "Evaluate";
+
+"Connecting" = "Connecting ...";
+"ConnectionFailed" = "Connection failed";
+"ConnectionClosed" = "Connection closed";
+
+"Yesterday" = "Yesterday";
+
+"PhotoAccessRight" = "You don't have the access right of phoro, please set it in Settings";
+"CameraAccessRight" = "You don't have the access right of camera, please set it in Settings";
+"MicrophoneAccessRight" = "You don't have the access right of microphone, please set it in Settings";
+"DeviceUnsupport" = "The current device does not support this operation";
+
+"HoldToTalk" = "Hold to Talk";
+"ReleaseToSend" = "Release to Send";
+"ReleaseToCancel" = "Release to cancel";
+"SlideUpAndCancel" = "Slide up to cancel";
+"ReleaseAndCancel" = "Release to cancel";
+
+"UnsupportedMessage" = "Unsupported message";
+
+"MessageMenu" = "Menu";
+"MessageRecommend" = "Do you want to ask";
+"MessageAcceptGroup" = "Select business";
+"ClickHere" = "Click here";
+"Evaluation" = "Evaluation";

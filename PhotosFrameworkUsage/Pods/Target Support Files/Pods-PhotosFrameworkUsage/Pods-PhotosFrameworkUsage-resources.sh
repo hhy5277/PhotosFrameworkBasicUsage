@@ -94,10 +94,16 @@ EOM
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle"
   install_resource "${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle"
+  install_resource "${PODS_ROOT}/PDBotKit/PDBotKit.bundle"
+  install_resource "${PODS_ROOT}/PDBotKit/zh-Hans.lproj"
+  install_resource "${PODS_ROOT}/PDBotKit/en.lproj"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle"
   install_resource "${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle"
+  install_resource "${PODS_ROOT}/PDBotKit/PDBotKit.bundle"
+  install_resource "${PODS_ROOT}/PDBotKit/zh-Hans.lproj"
+  install_resource "${PODS_ROOT}/PDBotKit/en.lproj"
 fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

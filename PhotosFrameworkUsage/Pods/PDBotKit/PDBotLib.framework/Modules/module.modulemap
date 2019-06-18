@@ -1,0 +1,6 @@
+framework module PDBotLib {
+  umbrella header "PDBotLib.h"
+
+  export *
+  module * { export * }
+}

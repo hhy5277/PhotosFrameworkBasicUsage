@@ -23,6 +23,8 @@
 #import "FaceAnalyzeViewController.h"
 #import "BaseTableViewCell.h"
 #import "SpeechRecognitionViewController.h"
+#import "SIMInfoViewController.h"
+#import "NumberScrollViewController.h"
 
 #define kVideoMaximumDuration 30
 
@@ -51,6 +53,11 @@
 #define kFaceAnalyse @"人脸识别"
 #define kSpeechRecognition @"iOS原生语音识别"
 #define kSendShortMessage @"发送短信"
+#define kGetLocalPhoneNumber @"本机手机号码"
+#define kTelPhoneNumber @"拨打电话"
+#define kKeyChainUsage @"KeyChain的基本使用"
+#define kAIQuestionAnswer @"AI智能问答"
+#define kNumberScrollAnimation @"数字滚动"
 
 @interface MediaViewController () <UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -62,7 +69,7 @@
 
 - (NSArray *)listArray {
     if (!_listArray) {
-        _listArray = @[kSendShortMessage,kSpeechRecognition,kFaceAnalyse,kHttpUrlTest,kOCAndJSExecute,kAuthenticationPass,kContactsFrameworkUsage,kRecordVideoUseImagePickerController,kPlayVideoWithAVPlayerViewController,kVideoSaveToAlbum,kGetMediaInfoWithAVAsset,kConvertWithAVAssetExportSession,kCompressWithAVAssetExportSession,kVideoFrameWithAVAssetImageGenerator,kUploadVideoToServer,kSelectVideoOfPhotoLibrary,kPhotosFrameworkUsage,kToOtherLoginVc,kAVPlayerLayerUsage,kSystemOriginSharedVc,kQrCodeReader,kQrCodeGenerator, kAudioHandle,kSendEmail];
+        _listArray = @[kNumberScrollAnimation,kAIQuestionAnswer,kKeyChainUsage,kTelPhoneNumber,kGetLocalPhoneNumber,kSendShortMessage,kSpeechRecognition,kFaceAnalyse,kHttpUrlTest,kOCAndJSExecute,kAuthenticationPass,kContactsFrameworkUsage,kRecordVideoUseImagePickerController,kPlayVideoWithAVPlayerViewController,kVideoSaveToAlbum,kGetMediaInfoWithAVAsset,kConvertWithAVAssetExportSession,kCompressWithAVAssetExportSession,kVideoFrameWithAVAssetImageGenerator,kUploadVideoToServer,kSelectVideoOfPhotoLibrary,kPhotosFrameworkUsage,kToOtherLoginVc,kAVPlayerLayerUsage,kSystemOriginSharedVc,kQrCodeReader,kQrCodeGenerator, kAudioHandle,kSendEmail];
     }
     return _listArray;
 }
@@ -118,8 +125,47 @@
         [self speechRecognition];
     } else if ([text isEqualToString:kSendShortMessage]) {
         [self sendShortMsg];
+    } else if ([text isEqualToString:kGetLocalPhoneNumber]) {
+        [self localPhoneNumber];
+    } else if ([text isEqualToString:kTelPhoneNumber]) {
+        [self callMobileNumber];
+    } else if ([text isEqualToString:kKeyChainUsage]) {
+        [self keychainUsage];
+    } else if ([text isEqualToString:kAIQuestionAnswer]) {
+        [self questionAnswerForAI];
+    } else if ([text isEqualToString:kNumberScrollAnimation]) {
+        [self numberScrollAnimation];
     }
+}
+
+#pragma mark - 数字滚动
+- (void)numberScrollAnimation {
+    NumberScrollViewController *numberScrollVc = [[NumberScrollViewController alloc] init];
+    [self.navigationController pushViewController:numberScrollVc animated:YES];
+}
+
+#pragma mark - AI智能问答
+- (void)questionAnswerForAI {
+    NSString *accessKey = @"ODQzNiNlNjVkYzFmMS1hMzZhLTRiOGQtOTA0Yy1mYTMxZjZmNDE0NTQjZTg2YjU5ODYtNjNlZi00MmVkLThmOTItODBiMWIyZDQ1YTMwIzkzNWE4MWM5NmIzNDJlMzUyMDM4YTg2ZjY3YWFlMGY5";
     
+}
+
+#pragma mark - keychain的基本使用
+- (void)keychainUsage {
+    [SystemShareViewController keychainSave];
+}
+
+#pragma mark - 拨打电话
+- (void)callMobileNumber {
+//    NSString *tel = @"telprompt://10086";
+    NSString *tel = @"tel://1008611";
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:tel]];
+}
+
+#pragma mark - 获取本机手机号码
+- (void)localPhoneNumber {
+    SIMInfoViewController *simVc = [[SIMInfoViewController alloc] init];
+    [self.navigationController pushViewController:simVc animated:YES];
 }
 
 #pragma mark - 发送短信

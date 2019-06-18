@@ -14,5 +14,7 @@ pod 'FMDB'
 pod 'MBProgressHUD'
 pod 'MJExtension'
 pod 'MJRefresh'
+pod 'PDBotKit'
+pod 'MSNumberScrollAnimatedView'
 
 end

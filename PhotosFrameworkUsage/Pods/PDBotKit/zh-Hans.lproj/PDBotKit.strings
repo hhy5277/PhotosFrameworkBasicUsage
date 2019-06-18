@@ -1,0 +1,43 @@
+/* 
+  PDBotKit.strings
+  PDBotKit
+
+  Created by wuyifan on 2018/1/5.
+  Copyright © 2018年 4Paradigm. All rights reserved.
+*/
+
+"OK" = "确定";
+"Cancel" = "取消";
+"Back" = "返回";
+"More" = "更多";
+"Photo" = "照片";
+"Camera" = "拍摄";
+"File" = "文件";
+"Human" = "转人工";
+"Message" = "留言";
+"Evaluate" = "评价";
+
+"Connecting" = "正在连接...";
+"ConnectionFailed" = "连接失败";
+"ConnectionClosed" = "连接已断开";
+
+"Yesterday" = "昨天";
+
+"PhotoAccessRight" = "没有照片访问权限，请前往“设置-隐私-照片”选项中，允许访问您的照片";
+"CameraAccessRight" = "您没有相机访问权限，请前往“设置-隐私-相机”选项中，允许访问您的手机相机";
+"MicrophoneAccessRight" = "您没有麦克风访问权限，请前往“设置-隐私-麦克风”选项中，允许访问您的手机麦克风";
+"DeviceUnsupport" = "当前设备不支持该操作";
+
+"HoldToTalk" = "按住 说话";
+"ReleaseToSend" = "松开 结束";
+"ReleaseToCancel" = "松开 取消";
+"SlideUpAndCancel" = "手指上滑，取消发送";
+"ReleaseAndCancel" = "松开手指，取消发送";
+
+"UnsupportedMessage" = "当前版本不支持该消息";
+
+"MessageMenu" = "菜单";
+"MessageRecommend" = "您是不是想问下面的问题";
+"MessageAcceptGroup" = "请选择您要咨询的业务";
+"ClickHere" = "点击此处";
+"Evaluation" = "进行评价";

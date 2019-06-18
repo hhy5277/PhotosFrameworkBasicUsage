@@ -21,7 +21,8 @@
 #import "UIImage+fixOrientation.h"
 #import "MenuLabel.h"
 #import "NSString+Base64.h"
-
+#import "UILabel+JumpNumber.h"
+#import "BaseTableViewCell.h"
 
 #define kScreenBounds [UIScreen mainScreen].bounds
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
