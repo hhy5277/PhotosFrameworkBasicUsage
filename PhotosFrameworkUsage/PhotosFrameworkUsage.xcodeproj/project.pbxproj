@@ -96,6 +96,9 @@
 		A2FEDFFF22A50C540009B52B /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2FEDFFE22A50C540009B52B /* LocalAuthentication.framework */; };
 		A2FEE00122A51AB40009B52B /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2FEE00022A51AB40009B52B /* JavaScriptCore.framework */; };
 		B11E3DC7CDE6D625AFA6A0F1 /* libPods-PhotosFrameworkUsage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F45DA5A71F4E24256E35FD9 /* libPods-PhotosFrameworkUsage.a */; };
+		E6315E7222B91352006208E6 /* ZLNumberScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = E6315E7122B91352006208E6 /* ZLNumberScrollView.m */; };
+		E6D0419022B91542003DF664 /* NumberCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D0418E22B91542003DF664 /* NumberCollectionViewCell.m */; };
+		E6D0419122B91542003DF664 /* NumberCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6D0418F22B91542003DF664 /* NumberCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -240,6 +243,11 @@
 		A2FEDFFE22A50C540009B52B /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		A2FEE00022A51AB40009B52B /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		BBCA052C9F19569B3FB183A2 /* Pods-PhotosFrameworkUsage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosFrameworkUsage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PhotosFrameworkUsage/Pods-PhotosFrameworkUsage.debug.xcconfig"; sourceTree = "<group>"; };
+		E6315E7022B91352006208E6 /* ZLNumberScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZLNumberScrollView.h; sourceTree = "<group>"; };
+		E6315E7122B91352006208E6 /* ZLNumberScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZLNumberScrollView.m; sourceTree = "<group>"; };
+		E6D0418D22B91542003DF664 /* NumberCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NumberCollectionViewCell.h; sourceTree = "<group>"; };
+		E6D0418E22B91542003DF664 /* NumberCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NumberCollectionViewCell.m; sourceTree = "<group>"; };
+		E6D0418F22B91542003DF664 /* NumberCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -530,6 +538,11 @@
 				A247DE8F22B8CD770086FB0C /* NumberScrollViewController.xib */,
 				A21AADCF22B8DA4E00E5B902 /* ZLNumberScrollAnimationView.h */,
 				A21AADD022B8DA4E00E5B902 /* ZLNumberScrollAnimationView.m */,
+				E6315E7022B91352006208E6 /* ZLNumberScrollView.h */,
+				E6315E7122B91352006208E6 /* ZLNumberScrollView.m */,
+				E6D0418D22B91542003DF664 /* NumberCollectionViewCell.h */,
+				E6D0418E22B91542003DF664 /* NumberCollectionViewCell.m */,
+				E6D0418F22B91542003DF664 /* NumberCollectionViewCell.xib */,
 			);
 			path = FrameworkTestModule;
 			sourceTree = "<group>";
@@ -684,6 +697,7 @@
 				A23123BA22A7C9FB00C2559C /* AudioRecorderViewController.xib in Resources */,
 				A23123B622A7C9FB00C2559C /* AlbumViewController.xib in Resources */,
 				A279F732229CCB9D003FAC27 /* LaunchScreen.storyboard in Resources */,
+				E6D0419122B91542003DF664 /* NumberCollectionViewCell.xib in Resources */,
 				A23123EE22A7CB7900C2559C /* QQBaseViewController.xib in Resources */,
 				A279F72F229CCB9D003FAC27 /* Assets.xcassets in Resources */,
 				A2CD6ECA22B7A492001E741C /* HealthViewController.xib in Resources */,
@@ -771,6 +785,7 @@
 				A23123F222A7CB8900C2559C /* QQLoginViewController.m in Sources */,
 				A23123B722A7C9FB00C2559C /* AudioListViewController.m in Sources */,
 				A270D7AF22AE3D9A009B61AC /* NSString+Base64.m in Sources */,
+				E6315E7222B91352006208E6 /* ZLNumberScrollView.m in Sources */,
 				A2BCFA3A22A8F4B9004AD109 /* UIImage+fixOrientation.m in Sources */,
 				A23123C822A7C9FB00C2559C /* PhotoBrowserViewController.m in Sources */,
 				A23123D322A7C9FB00C2559C /* QRScanView.m in Sources */,
@@ -800,6 +815,7 @@
 				A29F0BE922B781520076B108 /* SIMInfoViewController.m in Sources */,
 				A23123CB22A7C9FB00C2559C /* PhotosViewController.m in Sources */,
 				A21AADD122B8DA4E00E5B902 /* ZLNumberScrollAnimationView.m in Sources */,
+				E6D0419022B91542003DF664 /* NumberCollectionViewCell.m in Sources */,
 				A279F751229CCC0C003FAC27 /* LZImageBrowserViewController.m in Sources */,
 				A27E59ED22A907EB00DF379E /* BaseTableViewCell.m in Sources */,
 				A23123C122A7C9FB00C2559C /* MediaViewController.m in Sources */,

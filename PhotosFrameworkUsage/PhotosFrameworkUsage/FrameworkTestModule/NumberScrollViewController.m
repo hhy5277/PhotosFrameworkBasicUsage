@@ -8,6 +8,7 @@
 
 #import "NumberScrollViewController.h"
 #import "ZLNumberScrollAnimationView.h"
+#import "ZLNumberScrollView.h"
 
 @interface NumberScrollViewController ()
 - (IBAction)confirmOnClick;
@@ -27,10 +28,18 @@
 //    NSString *text = self.numberTfx.text;
     
     [[self.view viewWithTag:100] removeFromSuperview];
-//
-    ZLNumberScrollAnimationView *animationView = [ZLNumberScrollAnimationView animationViewWithFrame:CGRectMake(0, 90, kScreenWidth, 40) points:(long)[self.numberTfx.text integerValue]];
-    animationView.tag = 100;
-    [self.view addSubview:animationView];
+    
+    
+    long num = (long)[self.numberTfx.text integerValue];
+    ZLNumberScrollView *scrollView = [ZLNumberScrollView animationViewWithFrame:CGRectMake(0, 90, kScreenWidth, 40) points:num];
+    scrollView.tag = 100;
+    [self.view addSubview:scrollView];
+    
+    
+    
+//    ZLNumberScrollAnimationView *animationView = [ZLNumberScrollAnimationView animationViewWithFrame:CGRectMake(0, 90, kScreenWidth, 40) points:(long)[self.numberTfx.text integerValue]];
+//    animationView.tag = 100;
+//    [self.view addSubview:animationView];
 }
 
 @end

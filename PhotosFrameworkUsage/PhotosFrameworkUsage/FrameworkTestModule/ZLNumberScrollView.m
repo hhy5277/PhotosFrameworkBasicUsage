@@ -1,24 +1,25 @@
 //
-//  ZLNumberScrollAnimationView.m
+//  ZLNumberScrollView.m
 //  PhotosFrameworkUsage
 //
-//  Created by 瓜豆2018 on 2019/6/18.
-//  Copyright © 2019年 hongyegroup. All rights reserved.
+//  Created by ZhangLiang on 2019/6/18.
+//  Copyright © 2019 hongyegroup. All rights reserved.
 //
 
-#import "ZLNumberScrollAnimationView.h"
+#import "ZLNumberScrollView.h"
+#import "NumberCollectionViewCell.h"
 
 #define kNumberFont [UIFont systemFontOfSize:15]
 
-@interface ZLNumberScrollAnimationView () <UITableViewDataSource, UITableViewDelegate>
+@interface ZLNumberScrollView () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (nonatomic, strong) NSArray *numbersArr;
-@property (nonatomic, strong) NSMutableArray *tablesArr;
+@property (nonatomic, strong) NSMutableArray *collectionsArr;
 @property (nonatomic, weak) UIView *contentView;
 @property (nonatomic, copy) NSString *pointsStr;
 @property (nonatomic, strong) NSMutableArray *charactersArr;
 @end
 
-@implementation ZLNumberScrollAnimationView
+@implementation ZLNumberScrollView
 
 - (NSArray *)numbersArr {
     if (!_numbersArr) {
@@ -52,37 +53,46 @@
 
 + (instancetype)animationViewWithFrame:(CGRect)frame points:(long)points {
     NSString *numberStr = [self numberStringWithPoints:points];
-    ZLNumberScrollAnimationView *animationView = [[ZLNumberScrollAnimationView alloc] initWithFrame:frame];
+    ZLNumberScrollView *animationView = [[ZLNumberScrollView alloc] initWithFrame:frame];
     animationView.pointsStr = numberStr;
     NSUInteger length = [numberStr length];
     
     CGSize viewSize = [numberStr boundingRectWithSize:CGSizeMake(320, 50) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:kNumberFont} context:nil].size;
-    CGFloat contentViewW = ceil(viewSize.width) + length;
-    CGFloat contentViewH = viewSize.height;
+    CGFloat contentViewW = ceil(viewSize.width) + length * 1.5;
+    CGFloat contentViewH = ceil(viewSize.height);
     UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake((frame.size.width - contentViewW) * 0.5, (frame.size.height - contentViewH) * 0.5, contentViewW, contentViewH)];
     contentView.backgroundColor = [UIColor clearColor];
     [animationView addSubview:contentView];
     animationView.contentView = contentView;
     
     animationView.charactersArr = [NSMutableArray arrayWithCapacity:length];
-    animationView.tablesArr = [NSMutableArray arrayWithCapacity:length];
+    animationView.collectionsArr = [NSMutableArray arrayWithCapacity:length];
     CGFloat tableViewW = contentViewW / length;
     for (int i = 0; i < length; i++) {
-        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(tableViewW * i, 0, tableViewW, contentViewH) style:UITableViewStylePlain];
-        tableView.dataSource = animationView;
-        tableView.delegate = animationView;
-        tableView.rowHeight = viewSize.height;
-        [contentView addSubview:tableView];
-        [animationView.tablesArr addObject:tableView];
+        UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+        layout.minimumLineSpacing = 0;
+        layout.minimumInteritemSpacing = 0;
+        layout.itemSize = CGSizeMake(tableViewW, contentViewH);
+        
+        UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(tableViewW * i, 0, tableViewW, contentViewH) collectionViewLayout:layout];
+        collectionView.dataSource = animationView;
+        collectionView.delegate = animationView;
+        collectionView.backgroundColor = [UIColor whiteColor];
+        [contentView addSubview:collectionView];
+        collectionView.showsVerticalScrollIndicator = NO;
+        collectionView.showsHorizontalScrollIndicator = NO;
+        [animationView.collectionsArr addObject:collectionView];
+        
+        [collectionView registerNib:[UINib nibWithNibName:@"NumberCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"cellId"];
         
         NSString *str = [numberStr substringWithRange:NSMakeRange(i, 1)];
         [animationView.charactersArr addObject:str];
         if ([str isEqualToString:@","]) {
-            tableView.tag = 1000;
+            collectionView.tag = 1000;
         }
     }
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [animationView numberScroll];
     });
     
@@ -96,37 +106,29 @@
             continue;
         }
         
-        UITableView *tableView = self.tablesArr[i];
-        [tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:[str intValue] inSection:0] animated:YES scrollPosition:UITableViewScrollPositionTop];
+        UICollectionView *collectionView = self.collectionsArr[i];
+        int index = [str intValue];
+        if (index == 9) {
+            [collectionView setContentOffset:CGPointMake(0, collectionView.frame.size.height * index) animated:YES];
+        } else {
+            [collectionView selectItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionTop];
+        }
     }
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (tableView.tag == 1000) {
-        return 1;
-    }
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return [self.numbersArr count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    BaseTableViewCell *cell = [BaseTableViewCell cellWithTableView:tableView];
-    NSString *cellId = @"cellId";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
-        cell.textLabel.textAlignment = NSTextAlignmentCenter;
-        cell.textLabel.font = kNumberFont;
-    }
-    if (tableView.tag == 1000) {
-        cell.textLabel.text = @",";
+- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    NumberCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellId" forIndexPath:indexPath];
+    cell.numLab.font = kNumberFont;
+    if (collectionView.tag == 1000) {
+        cell.numLab.text = @",";
         return cell;
     }
     
-    cell.textLabel.text = self.numbersArr[indexPath.row];
+    cell.numLab.text = self.numbersArr[indexPath.item];
     return cell;
 }
 
