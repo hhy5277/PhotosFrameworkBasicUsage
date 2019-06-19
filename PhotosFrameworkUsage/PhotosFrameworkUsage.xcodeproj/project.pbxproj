@@ -84,6 +84,8 @@
 		A2BCFA3522A8E728004AD109 /* FaceAnalyzeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2BCFA3322A8E728004AD109 /* FaceAnalyzeViewController.xib */; };
 		A2BCFA3722A8EAD3004AD109 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2BCFA3622A8EAD3004AD109 /* CoreImage.framework */; };
 		A2BCFA3A22A8F4B9004AD109 /* UIImage+fixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = A2BCFA3922A8F4B9004AD109 /* UIImage+fixOrientation.m */; };
+		A2C0EC9D22BA192900AFB0D7 /* ZLCharacterView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C0EC9C22BA192900AFB0D7 /* ZLCharacterView.m */; };
+		A2C0ECA122BA198E00AFB0D7 /* ZLNumberScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C0ECA022BA198E00AFB0D7 /* ZLNumberScrollView.m */; };
 		A2C83464229FB4D6005DB6DF /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C83462229FB4D6005DB6DF /* FBSDKCoreKit.framework */; };
 		A2C83465229FB4D6005DB6DF /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C83463229FB4D6005DB6DF /* FBSDKLoginKit.framework */; };
 		A2C83467229FBB6A005DB6DF /* AccountKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C83466229FBB6A005DB6DF /* AccountKit.framework */; };
@@ -96,9 +98,6 @@
 		A2FEDFFF22A50C540009B52B /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2FEDFFE22A50C540009B52B /* LocalAuthentication.framework */; };
 		A2FEE00122A51AB40009B52B /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2FEE00022A51AB40009B52B /* JavaScriptCore.framework */; };
 		B11E3DC7CDE6D625AFA6A0F1 /* libPods-PhotosFrameworkUsage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F45DA5A71F4E24256E35FD9 /* libPods-PhotosFrameworkUsage.a */; };
-		E6315E7222B91352006208E6 /* ZLNumberScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = E6315E7122B91352006208E6 /* ZLNumberScrollView.m */; };
-		E6D0419022B91542003DF664 /* NumberCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D0418E22B91542003DF664 /* NumberCollectionViewCell.m */; };
-		E6D0419122B91542003DF664 /* NumberCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6D0418F22B91542003DF664 /* NumberCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -227,6 +226,11 @@
 		A2BCFA3622A8EAD3004AD109 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		A2BCFA3822A8F4B9004AD109 /* UIImage+fixOrientation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+fixOrientation.h"; sourceTree = "<group>"; };
 		A2BCFA3922A8F4B9004AD109 /* UIImage+fixOrientation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+fixOrientation.m"; sourceTree = "<group>"; };
+		A2C0EC9B22BA192900AFB0D7 /* ZLCharacterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZLCharacterView.h; sourceTree = "<group>"; };
+		A2C0EC9C22BA192900AFB0D7 /* ZLCharacterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZLCharacterView.m; sourceTree = "<group>"; };
+		A2C0EC9E22BA196F00AFB0D7 /* ZLConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZLConst.h; sourceTree = "<group>"; };
+		A2C0EC9F22BA198D00AFB0D7 /* ZLNumberScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZLNumberScrollView.h; sourceTree = "<group>"; };
+		A2C0ECA022BA198E00AFB0D7 /* ZLNumberScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZLNumberScrollView.m; sourceTree = "<group>"; };
 		A2C83462229FB4D6005DB6DF /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		A2C83463229FB4D6005DB6DF /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		A2C83466229FBB6A005DB6DF /* AccountKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AccountKit.framework; sourceTree = "<group>"; };
@@ -243,11 +247,6 @@
 		A2FEDFFE22A50C540009B52B /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		A2FEE00022A51AB40009B52B /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		BBCA052C9F19569B3FB183A2 /* Pods-PhotosFrameworkUsage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosFrameworkUsage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PhotosFrameworkUsage/Pods-PhotosFrameworkUsage.debug.xcconfig"; sourceTree = "<group>"; };
-		E6315E7022B91352006208E6 /* ZLNumberScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZLNumberScrollView.h; sourceTree = "<group>"; };
-		E6315E7122B91352006208E6 /* ZLNumberScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZLNumberScrollView.m; sourceTree = "<group>"; };
-		E6D0418D22B91542003DF664 /* NumberCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NumberCollectionViewCell.h; sourceTree = "<group>"; };
-		E6D0418E22B91542003DF664 /* NumberCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NumberCollectionViewCell.m; sourceTree = "<group>"; };
-		E6D0418F22B91542003DF664 /* NumberCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -452,6 +451,7 @@
 		A231237C22A7C9FB00C2559C /* FrameworkTestModule */ = {
 			isa = PBXGroup;
 			children = (
+				A2C0EC9322BA18E400AFB0D7 /* ZLNumberScrollView */,
 				A231237D22A7C9FB00C2559C /* AlbumViewController.h */,
 				A231237E22A7C9FB00C2559C /* AlbumViewController.m */,
 				A231237F22A7C9FB00C2559C /* AlbumViewController.xib */,
@@ -538,11 +538,6 @@
 				A247DE8F22B8CD770086FB0C /* NumberScrollViewController.xib */,
 				A21AADCF22B8DA4E00E5B902 /* ZLNumberScrollAnimationView.h */,
 				A21AADD022B8DA4E00E5B902 /* ZLNumberScrollAnimationView.m */,
-				E6315E7022B91352006208E6 /* ZLNumberScrollView.h */,
-				E6315E7122B91352006208E6 /* ZLNumberScrollView.m */,
-				E6D0418D22B91542003DF664 /* NumberCollectionViewCell.h */,
-				E6D0418E22B91542003DF664 /* NumberCollectionViewCell.m */,
-				E6D0418F22B91542003DF664 /* NumberCollectionViewCell.xib */,
 			);
 			path = FrameworkTestModule;
 			sourceTree = "<group>";
@@ -608,6 +603,18 @@
 				A279F74A229CCC0C003FAC27 /* LZImageBrowserViewController.m */,
 			);
 			path = LZImageBrowser;
+			sourceTree = "<group>";
+		};
+		A2C0EC9322BA18E400AFB0D7 /* ZLNumberScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				A2C0EC9B22BA192900AFB0D7 /* ZLCharacterView.h */,
+				A2C0EC9C22BA192900AFB0D7 /* ZLCharacterView.m */,
+				A2C0EC9E22BA196F00AFB0D7 /* ZLConst.h */,
+				A2C0EC9F22BA198D00AFB0D7 /* ZLNumberScrollView.h */,
+				A2C0ECA022BA198E00AFB0D7 /* ZLNumberScrollView.m */,
+			);
+			path = ZLNumberScrollView;
 			sourceTree = "<group>";
 		};
 		A2C83461229FB0DD005DB6DF /* Frameworks */ = {
@@ -697,7 +704,6 @@
 				A23123BA22A7C9FB00C2559C /* AudioRecorderViewController.xib in Resources */,
 				A23123B622A7C9FB00C2559C /* AlbumViewController.xib in Resources */,
 				A279F732229CCB9D003FAC27 /* LaunchScreen.storyboard in Resources */,
-				E6D0419122B91542003DF664 /* NumberCollectionViewCell.xib in Resources */,
 				A23123EE22A7CB7900C2559C /* QQBaseViewController.xib in Resources */,
 				A279F72F229CCB9D003FAC27 /* Assets.xcassets in Resources */,
 				A2CD6ECA22B7A492001E741C /* HealthViewController.xib in Resources */,
@@ -785,8 +791,8 @@
 				A23123F222A7CB8900C2559C /* QQLoginViewController.m in Sources */,
 				A23123B722A7C9FB00C2559C /* AudioListViewController.m in Sources */,
 				A270D7AF22AE3D9A009B61AC /* NSString+Base64.m in Sources */,
-				E6315E7222B91352006208E6 /* ZLNumberScrollView.m in Sources */,
 				A2BCFA3A22A8F4B9004AD109 /* UIImage+fixOrientation.m in Sources */,
+				A2C0ECA122BA198E00AFB0D7 /* ZLNumberScrollView.m in Sources */,
 				A23123C822A7C9FB00C2559C /* PhotoBrowserViewController.m in Sources */,
 				A23123D322A7C9FB00C2559C /* QRScanView.m in Sources */,
 				A238D94722A90F23002F3641 /* TestBaseView.m in Sources */,
@@ -815,13 +821,13 @@
 				A29F0BE922B781520076B108 /* SIMInfoViewController.m in Sources */,
 				A23123CB22A7C9FB00C2559C /* PhotosViewController.m in Sources */,
 				A21AADD122B8DA4E00E5B902 /* ZLNumberScrollAnimationView.m in Sources */,
-				E6D0419022B91542003DF664 /* NumberCollectionViewCell.m in Sources */,
 				A279F751229CCC0C003FAC27 /* LZImageBrowserViewController.m in Sources */,
 				A27E59ED22A907EB00DF379E /* BaseTableViewCell.m in Sources */,
 				A23123C122A7C9FB00C2559C /* MediaViewController.m in Sources */,
 				A279F727229CCB9B003FAC27 /* AppDelegate.m in Sources */,
 				A23123B522A7C9FB00C2559C /* AlbumViewController.m in Sources */,
 				A23123D422A7C9FB00C2559C /* SystemShareViewController.m in Sources */,
+				A2C0EC9D22BA192900AFB0D7 /* ZLCharacterView.m in Sources */,
 				A23123D822A7C9FB00C2559C /* ZLVideoModel.m in Sources */,
 				A23123BF22A7C9FB00C2559C /* FileUploadTool.m in Sources */,
 				A23123E122A7CB0800C2559C /* QQNavigationController.m in Sources */,

@@ -8,13 +8,13 @@
 
 #import "ZLNumberScrollAnimationView.h"
 
-#define kNumberFont [UIFont systemFontOfSize:15]
+#define kNumberFont [UIFont systemFontOfSize:18]
 
 @interface ZLNumberScrollAnimationView () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) NSArray *numbersArr;
 @property (nonatomic, strong) NSMutableArray *tablesArr;
 @property (nonatomic, weak) UIView *contentView;
-@property (nonatomic, copy) NSString *pointsStr;
+@property (nonatomic, copy) NSMutableString *pointsStr;
 @property (nonatomic, strong) NSMutableArray *charactersArr;
 @end
 
@@ -54,16 +54,16 @@
     NSString *numberStr = [self numberStringWithPoints:points];
     ZLNumberScrollAnimationView *animationView = [[ZLNumberScrollAnimationView alloc] initWithFrame:frame];
     animationView.pointsStr = numberStr;
-    NSUInteger length = [numberStr length];
     
     CGSize viewSize = [numberStr boundingRectWithSize:CGSizeMake(320, 50) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:kNumberFont} context:nil].size;
-    CGFloat contentViewW = ceil(viewSize.width) + length;
-    CGFloat contentViewH = viewSize.height;
+    CGFloat contentViewW = ceil(viewSize.width);
+    CGFloat contentViewH = ceil(viewSize.height);
     UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake((frame.size.width - contentViewW) * 0.5, (frame.size.height - contentViewH) * 0.5, contentViewW, contentViewH)];
     contentView.backgroundColor = [UIColor clearColor];
     [animationView addSubview:contentView];
     animationView.contentView = contentView;
     
+    NSUInteger length = [numberStr length];
     animationView.charactersArr = [NSMutableArray arrayWithCapacity:length];
     animationView.tablesArr = [NSMutableArray arrayWithCapacity:length];
     CGFloat tableViewW = contentViewW / length;
@@ -113,14 +113,14 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    BaseTableViewCell *cell = [BaseTableViewCell cellWithTableView:tableView];
-    NSString *cellId = @"cellId";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
-        cell.textLabel.textAlignment = NSTextAlignmentCenter;
-        cell.textLabel.font = kNumberFont;
-    }
+    BaseTableViewCell *cell = [BaseTableViewCell cellWithTableView:tableView];
+    cell.textLabel.textAlignment = NSTextAlignmentCenter;
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellId"];
+//    if (cell == nil) {
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cellId"];
+//        cell.textLabel.textAlignment = NSTextAlignmentCenter;
+//    }
+    
     if (tableView.tag == 1000) {
         cell.textLabel.text = @",";
         return cell;
